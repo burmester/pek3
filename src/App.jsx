@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 
-import { Container } from 'reactstrap';
-
 import history from './utils/history';
 import GlobalState from './context/GlobalState';
 import Start from './pages/Start';
-import Header from './components/Header';
+import Webb from './pages/Webb';
+import Phone from './pages/Phone';
 
 
 export default class App extends Component {
-    render () {
+    render() {
         return (
             <GlobalState>
                 <Router history={history}>
-                    <Container>
-                        <Header />
-                        <Switch>
-                            <Route exact path="/" component={Start} />
-                        </Switch>
-                    </Container>
+                    <Switch>
+                        <Route exact path="/" component={Start} />
+                        <Route path="/phone" component={Phone} />
+                        <Route path="/webb" component={Webb} />
+                    </Switch>
                 </Router>
             </GlobalState>
         )

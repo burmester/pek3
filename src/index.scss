@@ -1,0 +1,82 @@
+body {
+    background: #fbfaf9;
+
+    h2 {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+.btn {
+    &.btn-primary {
+        background: #005fa5;
+        border-color: #005fa5;
+
+        &:active,
+        &:hover {
+            background-color: #043b61 !important;
+            border-color: #043b61 !important;
+            ;
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 0.2rem rgba(0, 95, 165, 0.5);
+        }
+    }
+
+    &.btn-secondary {
+        background: #FFF;
+        color: #005fa5;
+        border-color: #005fa5;
+
+        &:active,
+        &:hover {
+            background-color: #dddddd !important;
+            border-color: #005fa5 !important;
+            color: #005fa5 !important;
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 0.2rem rgba(0, 95, 165, 0.5);
+        }
+    }
+
+    &.btn-link {
+        color: #005fa5;
+        text-decoration: none !important;
+        font-size: 14px;
+    }
+}
+
+input.form-control {
+    text-align: center;
+}
+
+.hero {
+    height: 100px;
+    padding-top: 20px;
+
+    .material-icons {
+        font-size: 50px;
+        color: #005fa5;
+    }
+
+    &.grad {
+        height: 200px;
+        background: linear-gradient(to right, #043b62 0%, #005b9a 100%);
+        padding-top: 0;
+
+        .material-icons {
+            font-size: 70px;
+            color: #FFF;
+        }
+    }
+}
+
+.centerdComponent {
+    margin: 20px 40px 40px;
+}
