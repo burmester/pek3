@@ -31,6 +31,14 @@ class GlobalState extends Component {
     this.setState({ data: undefined }, callback);
   };
 
+  setDeviceId = (deviceId, callback) => {
+    this.setState({ data: {...this.state.data, deviceId: deviceId}}, callback)
+  };
+
+  enterToken = (token, callback) => {
+    this.setState({ data: {...this.state.data, enterToken: token}}, callback)
+  };
+
   getStatus = async (token, callback) => {
     const response = await fetch("/.netlify/functions/getStatus?token=" + token);
     const body = await response.json();
@@ -46,6 +54,8 @@ class GlobalState extends Component {
           data: this.state.data,
           loading: this.state.loading,
           getStatus: this.getStatus,
+          enterToken: this.enterToken,
+          setDeviceId: this.setDeviceId,
         }}
       >
         {this.props.children}

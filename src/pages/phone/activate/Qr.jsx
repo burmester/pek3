@@ -12,25 +12,41 @@ export default class Start extends React.Component {
     super(props)
     this.state = {
       delay: 100,
-      result: 'No result',
+      result: false,
+      facingMode: 'rear',
+      error: false
     }
-
     this.handleScan = this.handleScan.bind(this)
+    this.handleError = this.handleError.bind(this)
   }
   handleScan(data) {
-    this.setState({
-      result: data,
-    })
-    console.log(data)
+    const token = this.context.data.token;
+    if (data === token) {
+      this.context.setDeviceId(data, () => history.push('/phone/passcode'))
+    } else {
+      this.setState({ result: "Not correct QR" })
+    }
+
   }
   handleError(err) {
-    console.error(err)
+    this.setState({ error: err.message })
   }
   render() {
-    const previewStyle = {
-      height: 240,
-      width: 320,
+    if (this.state.error) {
+      return (
+        <div className="centerdComponent text-center">
+          <h2>{this.state.error}</h2>
+          <p>You need to allow the camera</p>
+        </div>
+      )
     }
+
+    const previewStyle = {
+      height: "400px",
+      width: "100%",
+      posistion: "relative",
+    }
+
 
     return (
       <div>
@@ -39,8 +55,17 @@ export default class Start extends React.Component {
           style={previewStyle}
           onError={this.handleError}
           onScan={this.handleScan}
+          facingMode={this.facingMode}
         />
-        <p>{this.state.result}</p>
+        <div style={{
+          height: "200px",
+          width: "200px",
+          border: "2px solid #FFF",
+          position: "absolute",
+          left: "calc(50% - 100px)",
+          top: "calc(150px)",
+          borderRadius: "10px"
+        }}></div>
       </div>
     )
   }

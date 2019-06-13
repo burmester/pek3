@@ -9,7 +9,7 @@ export default class Start extends React.Component {
   static contextType = Context;
 
   componentDidMount() {
-     history.push('/phone/activate')
+     history.push('/webb/activate/qr')
   }
 
   render() {
