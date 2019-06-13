@@ -4,7 +4,6 @@ import Context from "./defaultContext";
 import history from "../utils/history";
 
 class GlobalState extends Component {
-
   state = {
     data: undefined,
     loading: false
@@ -13,17 +12,25 @@ class GlobalState extends Component {
   componentDidMount() {
     const data = localStorage.getItem("data");
     if (data) {
-      this.setState({
-        data: JSON.parse(data),
-      }, () => history.push("/"));
+      this.setState(
+        {
+          data: JSON.parse(data)
+        },
+        () => history.push("/")
+      );
     } else {
       this.setState({
         data: {
-          token : Math.floor(Math.random() * 10).toString() + Math.floor(Math.random() * 10).toString() + Math.floor(Math.random() * 10).toString() + Math.floor(Math.random() * 10).toString() + Math.floor(Math.random() * 10).toString() + Math.floor(Math.random() * 10).toString()
+          token:
+            Math.floor(Math.random() * 10).toString() +
+            Math.floor(Math.random() * 10).toString() +
+            Math.floor(Math.random() * 10).toString() +
+            Math.floor(Math.random() * 10).toString() +
+            Math.floor(Math.random() * 10).toString() +
+            Math.floor(Math.random() * 10).toString()
         }
-      })
+      });
     }
-
   }
 
   removeData = callback => {
@@ -32,20 +39,34 @@ class GlobalState extends Component {
   };
 
   setDeviceId = (deviceId, callback) => {
-    this.setState({ data: {...this.state.data, deviceId: deviceId}}, callback)
+    if (false) {
+      this.getStatus(deviceId);
+      localStorage.setItem(
+        "data",
+        JSON.stringify({ ...this.state.data, deviceId: deviceId })
+      );
+    }
+    this.setState(
+      { data: { ...this.state.data, deviceId: deviceId } },
+      callback
+    );
   };
 
   enterToken = (token, callback) => {
-    this.setState({ data: {...this.state.data, enterToken: token}}, callback)
+    this.setState(
+      { data: { ...this.state.data, enterToken: token } },
+      callback
+    );
   };
 
   getStatus = async (token, callback) => {
-    const response = await fetch("/.netlify/functions/getStatus?token=" + token);
+    const response = await fetch(
+      "/.netlify/functions/getStatus?token=" + token
+    );
     const body = await response.json();
     if (response.status !== 200) throw Error(body.message);
-    localStorage.setItem("data", JSON.stringify(body));
-    this.setState({ data: body }, callback);
-  }
+    return body;
+  };
 
   render() {
     return (
@@ -55,7 +76,7 @@ class GlobalState extends Component {
           loading: this.state.loading,
           getStatus: this.getStatus,
           enterToken: this.enterToken,
-          setDeviceId: this.setDeviceId,
+          setDeviceId: this.setDeviceId
         }}
       >
         {this.props.children}

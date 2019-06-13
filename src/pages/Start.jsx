@@ -1,15 +1,15 @@
-import React, { Fragment } from 'react';
-import { Col, Row, Button} from 'reactstrap';
+import React, { Fragment } from "react";
+import { Col, Row, Button } from "reactstrap";
 
-import history from '../utils/history';
+import history from "../utils/history";
 
-import Context from '../context/defaultContext';
+import Context from "../context/defaultContext";
 
 export default class Start extends React.Component {
   static contextType = Context;
 
   componentDidMount() {
-     //history.push('/webb/activate/qr')
+    //history.push('/webb/activate/qr')
   }
 
   render() {
@@ -17,10 +17,13 @@ export default class Start extends React.Component {
       <Fragment>
         <Row>
           <Col>
-            <Button onClick={e => history.push('/phone/activate')}>Phone</Button>
-            <Button onClick={e => history.push('/webb/activate/code')}>Webb</Button>
+            <Button onClick={e => history.push("/phone/activate")}>
+              Phone
+            </Button>
+            <Button onClick={e => history.push("/webb/activate")}>Webb</Button>
           </Col>
         </Row>
-      </Fragment>)
+      </Fragment>
+    );
   }
 }
