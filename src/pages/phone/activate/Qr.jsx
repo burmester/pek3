@@ -23,7 +23,7 @@ export default class Start extends React.Component {
   handleScan(data) {
     const token = this.context.data.token;
     if (data === token) {
-      this.context.setDeviceId(data, () => history.push("/phone/passcode"));
+      this.context.scanOk(() => history.push("/phone/passcode"));
     } else {
       this.setState({ result: "Not correct QR, try agian! ", token: data });
     }
@@ -32,11 +32,18 @@ export default class Start extends React.Component {
     this.setState({ error: err.message });
   }
   render() {
-    if (false && this.state.error) {
+    if (this.state.error) {
       return (
         <div className="centerdComponent text-center">
           <h2>{this.state.error}</h2>
           <p>You need to allow the camera</p>
+          <Button
+            onClick={e =>
+              this.context.scanOk(() => history.push("/phone/passcode"))
+            }
+          >
+            Fake it
+          </Button>
         </div>
       );
     }

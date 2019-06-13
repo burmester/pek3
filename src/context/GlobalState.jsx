@@ -21,35 +21,40 @@ class GlobalState extends Component {
     } else {
       this.setState({
         data: {
-          token:
-            Math.floor(Math.random() * 10).toString() +
-            Math.floor(Math.random() * 10).toString() +
-            Math.floor(Math.random() * 10).toString() +
-            Math.floor(Math.random() * 10).toString() +
-            Math.floor(Math.random() * 10).toString() +
-            Math.floor(Math.random() * 10).toString()
+          token: this.generateToken()
         }
       });
     }
   }
 
-  removeData = callback => {
-    localStorage.clear();
-    this.setState({ data: undefined }, callback);
+  generateToken = () => {
+    return (
+      Math.floor(Math.random() * 10).toString() +
+      Math.floor(Math.random() * 10).toString() +
+      Math.floor(Math.random() * 10).toString() +
+      Math.floor(Math.random() * 10).toString() +
+      Math.floor(Math.random() * 10).toString() +
+      Math.floor(Math.random() * 10).toString()
+    );
   };
 
-  setDeviceId = (deviceId, callback) => {
-    if (false) {
-      this.getStatus(deviceId);
-      localStorage.setItem(
-        "data",
-        JSON.stringify({ ...this.state.data, deviceId: deviceId })
-      );
-    }
+  removeData = callback => {
+    localStorage.clear();
     this.setState(
-      { data: { ...this.state.data, deviceId: deviceId } },
+      {
+        data: {
+          token: this.generateToken()
+        }
+      },
       callback
     );
+  };
+
+  scanOk = callback => {
+    if (false) {
+      this.getStatus(this.state.token);
+    }
+    callback();
   };
 
   enterToken = (token, callback) => {
@@ -57,6 +62,12 @@ class GlobalState extends Component {
       { data: { ...this.state.data, enterToken: token } },
       callback
     );
+  };
+
+  setPasscode = (passcode, callback) => {
+    const data = { ...this.state.data, passcode: passcode };
+    localStorage.setItem("data", JSON.stringify(data));
+    this.setState({ data: data }, callback);
   };
 
   getStatus = async (token, callback) => {
@@ -74,9 +85,11 @@ class GlobalState extends Component {
         value={{
           data: this.state.data,
           loading: this.state.loading,
+          removeData: this.removeData,
           getStatus: this.getStatus,
           enterToken: this.enterToken,
-          setDeviceId: this.setDeviceId
+          scanOk: this.scanOk,
+          setPasscode: this.setPasscode
         }}
       >
         {this.props.children}
