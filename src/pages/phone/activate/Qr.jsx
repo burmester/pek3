@@ -13,7 +13,7 @@ export default class Start extends React.Component {
       delay: 100,
       result: "Scan the QR-code",
       token: undefined,
-      facingMode: "environment",
+      facingMode: "rear",
       error: false
     };
     this.handleScan = this.handleScan.bind(this);
@@ -42,8 +42,9 @@ export default class Start extends React.Component {
 
     const previewStyle = {
       height: "400px",
-      width: "100%",
-      posistion: "relative"
+      width: "375px",
+      posistion: "relative",
+      objectFit: "cover"
     };
 
     return (

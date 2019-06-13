@@ -30,7 +30,7 @@ export default class Start extends React.Component {
         <Button
           onClick={e =>
             this.context.enterToken(this.state.token, () =>
-              history.push("/webb/activate/qr")
+              history.push("/webb/qr")
             )
           }
         >
