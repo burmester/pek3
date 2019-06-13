@@ -13,7 +13,7 @@ export default class Start extends React.Component {
     this.state = {
       delay: 100,
       result: false,
-      facingMode: 'rear',
+      facingMode: 'environment',
       error: false
     }
     this.handleScan = this.handleScan.bind(this)

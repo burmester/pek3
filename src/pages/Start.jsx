@@ -9,7 +9,7 @@ export default class Start extends React.Component {
   static contextType = Context;
 
   componentDidMount() {
-     history.push('/webb/activate/qr')
+     //history.push('/webb/activate/qr')
   }
 
   render() {
@@ -17,8 +17,8 @@ export default class Start extends React.Component {
       <Fragment>
         <Row>
           <Col>
-            <Button onClick={e => history.push('/phone')}>Phone</Button>
-            <Button onClick={e => history.push('/webb')}>Webb</Button>
+            <Button onClick={e => history.push('/phone/activate')}>Phone</Button>
+            <Button onClick={e => history.push('/webb/activate/code')}>Webb</Button>
           </Col>
         </Row>
       </Fragment>)
