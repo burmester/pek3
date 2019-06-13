@@ -1,5 +1,6 @@
 import React from "react";
 import QrReader from "react-qr-scanner";
+import { Button, ButtonGroup } from "reactstrap";
 
 import Context from "../../../context/defaultContext";
 import history from "../../../utils/history";
@@ -31,7 +32,7 @@ export default class Start extends React.Component {
     this.setState({ error: err.message });
   }
   render() {
-    if (this.state.error) {
+    if (false && this.state.error) {
       return (
         <div className="centerdComponent text-center">
           <h2>{this.state.error}</h2>
@@ -44,7 +45,8 @@ export default class Start extends React.Component {
       height: "400px",
       width: "375px",
       posistion: "relative",
-      objectFit: "cover"
+      objectFit: "cover",
+      marginBottom: "20px"
     };
 
     return (
@@ -84,6 +86,24 @@ export default class Start extends React.Component {
           {this.state.result}
           <br />
           {this.state.token}
+        </div>
+        <div className="container text-center">
+          <ButtonGroup>
+            <Button
+              color={this.state.facingMode === "rear" ? "primary" : "secondary"}
+              onClick={e => this.setState({ facingMode: "rear" })}
+            >
+              Rear
+            </Button>
+            <Button
+              color={
+                this.state.facingMode === "front" ? "primary" : "secondary"
+              }
+              onClick={e => this.setState({ facingMode: "front" })}
+            >
+              Front
+            </Button>
+          </ButtonGroup>
         </div>
       </div>
     );
