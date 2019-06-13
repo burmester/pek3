@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { Button } from "reactstrap";
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 import history from "../../utils/history";
 
@@ -50,9 +52,20 @@ class Header extends Component {
               right: 0
             }}
             onClick={e => {
-              if (confirm("Are you sure?")) {
-                this.context.removeData(() => history.push("/phone/activate"));
-              }
+              confirmAlert({
+                title: 'Confirm to submit',
+                message: 'Are you sure to do this.',
+                buttons: [
+                  {
+                    label: 'Yes',
+                    onClick: () => this.context.removeData(() => history.push("/phone/activate"))
+                  },
+                  {
+                    label: 'No',
+                    onClick: () => {}
+                  }
+                ]
+              });
             }}
           >
             <i className="material-icons">more_horiz</i>
