@@ -70,14 +70,49 @@ class GlobalState extends Component {
     this.setState({ data: data }, callback);
   };
 
-  getStatus = async (token, callback) => {
+  setStatus = async (status, callback) => {
+    const token = this.state.data.token;
     const response = await fetch(
-      "/.netlify/functions/getStatus?token=" + token
+      "/.netlify/functions/status?token=" + token,
+      {
+        method: 'POST',
+        cache: 'no-cache',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ status: status })
+      }
+    );
+    const body = await response.json();
+    if (response.status !== 201) throw Error(body.message);
+    this.setState(
+      { data: { ...this.state.data, status: body.status } },
+      callback
+    );
+  }
+
+  getStatus = async () => {
+    const token = this.state.data.token;
+    const response = await fetch(
+      "/.netlify/functions/status?token=" + token
     );
     const body = await response.json();
     if (response.status !== 200) throw Error(body.message);
-    return body;
+    return body
   };
+
+  deleteToken = async (callback) => {
+    const token = this.state.data.token;
+    const response = await fetch(
+      "/.netlify/functions/status?token=" + token,
+      {
+        method: 'DELETE',
+        cache: 'no-cache',
+      }
+    );
+    if (response.status !== 200) throw Error();
+    this.removeData(callback)
+  }
 
   render() {
     return (
@@ -87,6 +122,8 @@ class GlobalState extends Component {
           loading: this.state.loading,
           removeData: this.removeData,
           getStatus: this.getStatus,
+          setStatus: this.setStatus,
+          deleteToken: this.deleteToken,
           enterToken: this.enterToken,
           scanOk: this.scanOk,
           setPasscode: this.setPasscode
