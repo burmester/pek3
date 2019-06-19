@@ -1,0 +1,22 @@
+{
+    "short_name": "Digital ID",
+    "name": "Handelsbanken Digital ID",
+    "icons": [
+      {
+        "src": "/images/icons-192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/images/icons-512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/phone",
+    "background_color": "#fbfaf9",
+    "display": "standalone",
+    "scope": "/phone",
+    "theme_color": "#005fa5",
+    "orientation": "portrait"
+  }
