@@ -51,23 +51,25 @@ class GlobalState extends Component {
   };
 
   scanOk = callback => {
-    if (false) {
-      this.getStatus(this.state.token);
-    }
-    callback();
+    this.setStatus("SCANED", callback);
   };
 
-  enterToken = (token, callback) => {
+  setToken = (token, callback) => {
     this.setState(
-      { data: { ...this.state.data, enterToken: token } },
+      { data: { ...this.state.data, token: token } },
       callback
     );
   };
 
+  setUserName = (userName, callback) => {
+    this.setStatus("USERNAME", callback);
+  };
+
   setPasscode = (passcode, callback) => {
-    const data = { ...this.state.data, passcode: passcode };
-    localStorage.setItem("data", JSON.stringify(data));
-    this.setState({ data: data }, callback);
+    this.setStatus("PASSCODE", arg => {
+      localStorage.setItem("data", JSON.stringify(this.state.data))
+      callback(arg)
+    });
   };
 
   setStatus = async (status, callback) => {
@@ -91,14 +93,15 @@ class GlobalState extends Component {
     );
   }
 
-  getStatus = async () => {
+  getStatus = async (callback) => {
     const token = this.state.data.token;
     const response = await fetch(
       "/.netlify/functions/status?token=" + token
     );
     const body = await response.json();
-    if (response.status !== 200) throw Error(body.message);
-    return body
+    if (response.status === 204) callback(body)
+    else if (response.status === 200) callback(body)
+    else throw Error(body.message);
   };
 
   deleteToken = async (callback) => {
@@ -110,7 +113,7 @@ class GlobalState extends Component {
         cache: 'no-cache',
       }
     );
-    if (response.status !== 200) throw Error();
+    if (response.status !== 204) throw Error();
     this.removeData(callback)
   }
 
@@ -124,9 +127,10 @@ class GlobalState extends Component {
           getStatus: this.getStatus,
           setStatus: this.setStatus,
           deleteToken: this.deleteToken,
-          enterToken: this.enterToken,
+          setToken: this.setToken,
           scanOk: this.scanOk,
-          setPasscode: this.setPasscode
+          setPasscode: this.setPasscode,
+          setUserName: this.setUserName
         }}
       >
         {this.props.children}

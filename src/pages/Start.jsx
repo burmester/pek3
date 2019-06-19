@@ -12,7 +12,7 @@ export default class Start extends React.Component {
     return (
       <Fragment>
         <Row>
-          <Col>
+          <Col >
             <Button
               onClick={e => {
                 if (
@@ -29,14 +29,14 @@ export default class Start extends React.Component {
               Phone
             </Button>
             <Button onClick={e => history.push("/webb/activate")}>Webb</Button>
-
-            <br />
-            <Button onClick={async (e) => {
-              const status = this.context.getStatus();
-              console.log(status);
-            }}>getStatus</Button>
-            <Button onClick={e => this.context.setStatus("Test", () => { console.log(this.context.data) })}>setStatus</Button>
+          </Col>
+        </Row>
+        <br />
+        <Row>
+          <Col>
+            <Button onClick={async (e) => { this.context.getStatus((body) => console.log(body)) }}>getStatus</Button>
             <Button onClick={e => this.context.deleteToken(() => { console.log('delete') })}>deleteToken</Button>
+            <Button onClick={e => this.context.setStatus("Test", () => { console.log(this.context.data) })}>setStatus</Button>
           </Col>
         </Row>
       </Fragment>

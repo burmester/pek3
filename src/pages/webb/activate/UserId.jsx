@@ -10,29 +10,27 @@ export default class Start extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      token: false
+      userName: undefined
     };
   }
 
   render() {
     return (
       <div className="centerdComponent text-center">
-        <h2>Enter teh activation code</h2>
+        <h2>Choose your username</h2>
         <Form>
           <FormGroup>
             <Input
-              type="tel"
-              placeholder="Activation code"
-              onChange={e => this.setState({ token: e.target.value })}
+              type="text"
+              placeholder="Username"
+              onChange={e => this.setState({ userName: e.target.value })}
             />
           </FormGroup>
         </Form>
         <Button
-          onClick={e =>
-            this.context.setToken(this.state.token, () =>
-              history.push("/webb/qr")
-            )
-          }
+          onClick={e => {
+            this.context.setUserName(this.state.userName, () => history.push("/webb/wait"))
+          }}
         >
           Next
         </Button>

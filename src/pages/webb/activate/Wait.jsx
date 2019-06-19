@@ -1,7 +1,4 @@
 import React from "react";
-import QRCode from "qrcode.react";
-import { Button } from "reactstrap";
-
 import Context from "../../../context/defaultContext";
 import history from "../../../utils/history";
 
@@ -12,8 +9,8 @@ export default class Start extends React.Component {
   componentDidMount() {
     this.intervalID = setInterval(() => {
       this.context.getStatus((body) => {
-        if (body.status === "SCANED") {
-          history.push("/webb/userId")
+        if (body.status === "PASSCODE") {
+          history.push("/webb/receipt")
         }
       })
     }, 2000);
@@ -24,14 +21,10 @@ export default class Start extends React.Component {
   }
 
   render() {
-    if (this.context.data && this.context.data.token) {
       return (
         <div className="centerdComponent text-center">
-          <h2>Use your phone to scan this QR-code</h2>
-          <QRCode value={this.context.data.token} level="H" />
+          <h2>Waiting for Mobile App</h2>
         </div>
       );
-    }
-    return <Button onClick={e => history.push("/webb")}>Back</Button>;
   }
 }
