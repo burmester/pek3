@@ -69,7 +69,7 @@ class GlobalState extends Component {
   };
 
   setPasscode = (passcode, callback) => {
-    this.setStatus("PASSCODE", arg => {
+    this.setStatus("OK", arg => {
       localStorage.setItem("data", JSON.stringify(this.state.data))
       callback(arg)
     });

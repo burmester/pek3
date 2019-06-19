@@ -56,7 +56,7 @@ export default class Passcode extends React.Component {
   render() {
     return (
       <Fragment>
-        <Header showMenu={false} onCancel={() => history.push("/phone/activate")} />
+        <Header showMenu={false} onCancel={() => history.push("/phone")} />
         <div className="hero d-flex align-items-center justify-content-center">
           <i className="material-icons">lock_outline</i>
         </div>

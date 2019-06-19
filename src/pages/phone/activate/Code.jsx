@@ -14,7 +14,7 @@ export default class Code extends React.Component {
 
     return (
       <Fragment>
-        <Header showMenu={false} onCancel={() => history.push("/phone/activate")}/>
+        <Header showMenu={false} onCancel={() => history.push("/phone")}/>
         <div className="hero d-flex align-items-center justify-content-center">
           <i
             className="material-icons"

@@ -13,29 +13,8 @@ export default class Start extends React.Component {
       <Fragment>
         <Row>
           <Col >
-            <Button
-              onClick={e => {
-                if (
-                  this.context.data &&
-                  this.context.data.token
-                ) {
-                  history.push("/phone");
-                } else {
-                  history.push("/phone/activate");
-                }
-              }}
-            >
-              Phone
-            </Button>
+            <Button onClick={e => { history.push("/phone");}}>Phone</Button>
             <Button onClick={e => history.push("/webb/activate")}>Webb</Button>
-          </Col>
-        </Row>
-        <br />
-        <Row>
-          <Col>
-            <Button onClick={async (e) => { this.context.getStatus((body) => console.log(body)) }}>getStatus</Button>
-            <Button onClick={e => this.context.deleteToken(() => { console.log('delete') })}>deleteToken</Button>
-            <Button onClick={e => this.context.setStatus("Test", () => { console.log(this.context.data) })}>setStatus</Button>
           </Col>
         </Row>
       </Fragment>

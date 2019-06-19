@@ -4,7 +4,6 @@ import { Route, Switch } from "react-router-dom";
 import Context from "../context/defaultContext";
 
 import Footer from "../components/phone/Footer";
-import Activate from "./phone/activate/Activate";
 import Code from "./phone/activate/Code";
 import Qr from "./phone/activate/Qr";
 import Wait from "./phone/activate/Wait";
@@ -12,6 +11,7 @@ import Passcode from "./phone/activate/Passcode";
 import Receipt from "./phone/activate/Receipt";
 import Start from "./phone/Start";
 import Login from "./phone/Login";
+import CheckSign from "./phone/CheckSign";
 import RemoveUser from "./phone/RemoveUser";
 import Contact from "./phone/Contact";
 import About from "./phone/About";
@@ -20,13 +20,11 @@ import About from "./phone/About";
 export default class extends React.Component {
   static contextType = Context;
 
-
   render() {
     return (
       <Fragment>
         <Switch>
           <Route exact path="/phone" component={Start} />
-          <Route path="/phone/activate" component={Activate} />
           <Route path="/phone/code" component={Code} />
           <Route path="/phone/qr" component={Qr} />
           <Route path="/phone/wait" component={Wait} />
@@ -36,6 +34,7 @@ export default class extends React.Component {
           <Route path="/phone/contact" component={Contact} />
           <Route path="/phone/about" component={About} />
           <Route path="/phone/login" component={Login} />
+          <Route path="/phone/checkSign" component={CheckSign} />
         </Switch>
         <Footer />
       </Fragment>

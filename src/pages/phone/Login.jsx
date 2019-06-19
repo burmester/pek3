@@ -24,7 +24,8 @@ export default class Login extends React.Component {
     this.handleError = this.handleError.bind(this);
   }
   handleScan(data) {
-      this.context.scanOk(() => history.push("/phone/sign"));
+    if (data && data.action === "LOGIN")
+      history.push("/phone/sign");
   }
   handleError(err) {
     this.setState({ error: err.message });
@@ -36,12 +37,7 @@ export default class Login extends React.Component {
           <Header cancelText="Back" showMenu={false} onCancel={() => history.push("/phone")} />
           <div className="centerdComponent text-center">
             <h2>{this.state.error}</h2>
-            <p>You need to allow the camera</p>
-            <Button
-              onClick={e =>
-                this.context.scanOk(() => history.push("/phone/sign"))
-              }
-            >
+            <Button onClick={e => history.push("/phone/sign")}>
               Fake it
           </Button>
           </div>
