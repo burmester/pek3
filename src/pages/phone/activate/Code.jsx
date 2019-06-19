@@ -4,7 +4,9 @@ import { Button } from "reactstrap";
 import Context from "../../../context/defaultContext";
 import history from "../../../utils/history";
 
-export default class Start extends React.Component {
+import Header from "../../../components/phone/Header";
+
+export default class Code extends React.Component {
   static contextType = Context;
 
   render() {
@@ -12,6 +14,7 @@ export default class Start extends React.Component {
 
     return (
       <Fragment>
+        <Header showMenu={false} onCancel={() => history.push("/phone/activate")}/>
         <div className="hero d-flex align-items-center justify-content-center">
           <i
             className="material-icons"
@@ -38,7 +41,7 @@ export default class Start extends React.Component {
                 fontWeight: "700"
               }}
             >
-              {token.substring(0, 3)} {token.substring(3, 7)}
+              {token.substring(0, 4)} {token.substring(4, 8)}
             </div>
           </div>
           <div className="centerdComponent text-center">

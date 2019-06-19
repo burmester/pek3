@@ -1,8 +1,11 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Context from "../../../context/defaultContext";
 import history from "../../../utils/history";
+import Spinner from "../../../components/Spinner";
+import Header from "../../../components/phone/Header";
 
-export default class Start extends React.Component {
+
+export default class Wait extends React.Component {
   static contextType = Context;
   intervalID = 0;
 
@@ -21,10 +24,14 @@ export default class Start extends React.Component {
   }
 
   render() {
-      return (
-        <div className="centerdComponent text-center">
-          <h2>Waiting for internet service</h2>
+    return (
+      <Fragment>
+        <Header showMenu={false} onCancel={() => history.push("/phone/activate")} />
+        <div className="centerdComponent text-center" style={{ marginTop: "30px" }}>
+          <Spinner width="50px" image={"/spinner.png"} />
+          <h2 style={{ marginTop: "30px" }}>Waiting for internet service</h2>
         </div>
-      );
+      </Fragment>
+    );
   }
 }

@@ -4,12 +4,15 @@ import { Button } from 'reactstrap';
 import Context from '../../../context/defaultContext';
 import history from '../../../utils/history';
 
-export default class Start extends React.Component {
+import Header from "../../../components/phone/Header";
+
+export default class Activate extends React.Component {
   static contextType = Context;
 
   render() {
     return (
       <Fragment>
+        <Header showMenu={true} />
         <div className="hero grad d-flex align-items-center justify-content-center">
           <i className="material-icons">lock_outline</i>
         </div>

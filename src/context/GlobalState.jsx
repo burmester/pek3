@@ -6,7 +6,8 @@ import history from "../utils/history";
 class GlobalState extends Component {
   state = {
     data: undefined,
-    loading: false
+    loading: false,
+    showMenu: false
   };
 
   componentDidMount() {
@@ -29,6 +30,8 @@ class GlobalState extends Component {
 
   generateToken = () => {
     return (
+      Math.floor(Math.random() * 10).toString() +
+      Math.floor(Math.random() * 10).toString() +
       Math.floor(Math.random() * 10).toString() +
       Math.floor(Math.random() * 10).toString() +
       Math.floor(Math.random() * 10).toString() +
@@ -117,11 +120,16 @@ class GlobalState extends Component {
     this.removeData(callback)
   }
 
+  toggleMenu = () => {
+    this.setState({showMenu: !this.state.showMenu});
+  }
+
   render() {
     return (
       <Context.Provider
         value={{
           data: this.state.data,
+          showMenu: this.state.showMenu,
           loading: this.state.loading,
           removeData: this.removeData,
           getStatus: this.getStatus,
@@ -130,7 +138,8 @@ class GlobalState extends Component {
           setToken: this.setToken,
           scanOk: this.scanOk,
           setPasscode: this.setPasscode,
-          setUserName: this.setUserName
+          setUserName: this.setUserName,
+          toggleMenu: this.toggleMenu
         }}
       >
         {this.props.children}

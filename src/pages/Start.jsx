@@ -17,8 +17,7 @@ export default class Start extends React.Component {
               onClick={e => {
                 if (
                   this.context.data &&
-                  this.context.data.token &&
-                  this.context.data.passcode
+                  this.context.data.token
                 ) {
                   history.push("/phone");
                 } else {

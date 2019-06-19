@@ -61,6 +61,12 @@ input.form-control {
     text-align: center;
 }
 
+.bottomSheet {
+    >div {
+        margin: 20px;
+    }
+}
+
 .hero {
     height: 100px;
     padding-top: 20px;
@@ -88,7 +94,24 @@ input.form-control {
 
 .react-confirm-alert-body {
     width: 350px !important;
+
     h1 {
         font-size: 30px;
     }
 }
+
+.spinner {
+    animation: spin 1.5s infinite linear;
+  }
+  
+  @keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      -webkit-transform: rotate(359deg);
+      transform: rotate(359deg);
+    }
+  }

@@ -1,17 +1,11 @@
 import React, { Component, Fragment } from "react";
 import { Button } from "reactstrap";
-import { confirmAlert } from 'react-confirm-alert'; // Import
-import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-
-import history from "../../utils/history";
-
 import Context from "../../context/defaultContext";
 
 class Header extends Component {
   static contextType = Context;
 
   render() {
-    const data = this.context.data;
     return (
       <Fragment>
         <div
@@ -20,7 +14,8 @@ class Header extends Component {
             lineHeight: "35px",
             background: "#e1f0f5",
             padding: "4px 0",
-            position: "relative"
+            position: "relative",
+            boxShadow: "rgba(0, 0, 0, 0.22) 0px 4px 5px"
           }}
         >
           <div
@@ -32,7 +27,7 @@ class Header extends Component {
           >
             Handelsbanken
           </div>
-          {data && data.cancel && (
+          {this.props.onCancel && (
             <Button
               color="link"
               style={{
@@ -40,10 +35,12 @@ class Header extends Component {
                 top: "4px",
                 left: 0
               }}
+              onClick={this.props.onCancel}
             >
-              Cancel
+              {this.props.cancelText ? this.props.cancelText : "Cancel"}
             </Button>
           )}
+          {this.props.showMenu && (
           <Button
             color="link"
             style={{
@@ -51,25 +48,11 @@ class Header extends Component {
               top: "4px",
               right: 0
             }}
-            onClick={e => {
-              confirmAlert({
-                title: 'Confirm to submit',
-                message: 'Are you sure to do this.',
-                buttons: [
-                  {
-                    label: 'Yes',
-                    onClick: () => this.context.removeData(() => history.push("/phone/activate"))
-                  },
-                  {
-                    label: 'No',
-                    onClick: () => {}
-                  }
-                ]
-              });
-            }}
+            onClick={this.context.toggleMenu}
           >
             <i className="material-icons">more_horiz</i>
           </Button>
+          )}
         </div>
       </Fragment>
     );

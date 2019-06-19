@@ -2,13 +2,13 @@ import React, { Fragment } from "react";
 import QrReader from "react-qr-scanner";
 import { Button, ButtonGroup } from "reactstrap";
 
-import Context from "../../../context/defaultContext";
-import history from "../../../utils/history";
+import Context from "../../context/defaultContext";
+import history from "../../utils/history";
 
-import Header from "../../../components/phone/Header";
+import Header from "../../components/phone/Header";
 
 
-export default class Qr extends React.Component {
+export default class Login extends React.Component {
   static contextType = Context;
 
   constructor(props) {
@@ -24,12 +24,7 @@ export default class Qr extends React.Component {
     this.handleError = this.handleError.bind(this);
   }
   handleScan(data) {
-    const token = this.context.data.token;
-    if (data === token) {
-      this.context.scanOk(() => history.push("/phone/wait"));
-    } else {
-      this.setState({ result: "Not correct QR, try agian! ", token: data });
-    }
+      this.context.scanOk(() => history.push("/phone/sign"));
   }
   handleError(err) {
     this.setState({ error: err.message });
@@ -38,13 +33,13 @@ export default class Qr extends React.Component {
     if (this.state.error) {
       return (
         <Fragment>
-          <Header showMenu={false} cancelText="Back" onCancel={() => history.push("/phone/code")} />
+          <Header cancelText="Back" showMenu={false} onCancel={() => history.push("/phone")} />
           <div className="centerdComponent text-center">
             <h2>{this.state.error}</h2>
             <p>You need to allow the camera</p>
             <Button
               onClick={e =>
-                this.context.scanOk(() => history.push("/phone/wait"))
+                this.context.scanOk(() => history.push("/phone/sign"))
               }
             >
               Fake it
@@ -64,7 +59,7 @@ export default class Qr extends React.Component {
 
     return (
       <Fragment>
-        <Header showMenu={false} cancelText="Back" onCancel={() => history.push("/phone/code")} />
+        <Header cancelText="Back" showMenu={false} onCancel={() => history.push("/phone")} />
         <div>
           <QrReader
             delay={this.state.delay}
@@ -99,8 +94,6 @@ export default class Qr extends React.Component {
             }}
           >
             {this.state.result}
-            <br />
-            {this.state.token}
           </div>
           <div className="container text-center">
             <ButtonGroup>
