@@ -57,6 +57,11 @@ class GlobalState extends Component {
     this.setStatus("SCANED", callback);
   };
 
+
+  signOK = callback => {
+    this.setStatus("OK", callback);
+  };
+
   setToken = (token, callback) => {
     this.setState(
       { data: { ...this.state.data, token: token } },
@@ -137,6 +142,7 @@ class GlobalState extends Component {
           deleteToken: this.deleteToken,
           setToken: this.setToken,
           scanOk: this.scanOk,
+          signOK: this.signOK,
           setPasscode: this.setPasscode,
           setUserName: this.setUserName,
           toggleMenu: this.toggleMenu

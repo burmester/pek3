@@ -1,6 +1,8 @@
 import React from "react";
-import Context from "../../../context/defaultContext";
-import history from "../../../utils/history";
+import QRCode from "qrcode.react";
+
+import Context from "../../context/defaultContext";
+import history from "../../utils/history";
 
 export default class Start extends React.Component {
   static contextType = Context;
@@ -10,7 +12,7 @@ export default class Start extends React.Component {
     this.intervalID = setInterval(() => {
       this.context.getStatus((body) => {
         if (body.status === "OK") {
-          this.context.setStatus("OK", () => history.push("/webb/activate/receipt"))
+          history.push("/webb/start")
         }
       })
     }, 2000);
@@ -18,14 +20,14 @@ export default class Start extends React.Component {
 
   componentWillUnmount() {
     clearInterval(this.intervalID);
-    this.context.setStatus("OK")
   }
 
   render() {
-      return (
-        <div className="centerdComponent text-center">
-          <h2>Waiting for Mobile App</h2>
-        </div>
-      );
+    return (
+      <div className="centerdComponent text-center">
+        <h2>Use your phone to scan this QR-code</h2>
+        <QRCode value="LOGIN" level="H" />
+      </div>
+    );
   }
 }

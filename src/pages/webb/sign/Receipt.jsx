@@ -14,7 +14,7 @@ export default class Start extends React.Component {
           <div className="centerdComponent text-center">
             <h2>Confirmation</h2>
             <p>
-              Your security app is now ready to use.
+              You have now sign:
             </p>
           </div>
           <Button color="primary" block onClick={e => history.push('/webb/start')}>OK</Button>

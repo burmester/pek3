@@ -25,7 +25,7 @@ export default class Login extends React.Component {
   }
   handleScan(data) {
     if (data && data.action === "LOGIN")
-      history.push("/phone/sign");
+      this.context.setStatus("LOGIN", () => history.push("/phone/sign"))
   }
   handleError(err) {
     this.setState({ error: err.message });
@@ -37,7 +37,7 @@ export default class Login extends React.Component {
           <Header cancelText="Back" showMenu={false} onCancel={() => history.push("/phone")} />
           <div className="centerdComponent text-center">
             <h2>{this.state.error}</h2>
-            <Button onClick={e => history.push("/phone/sign")}>
+            <Button onClick={e => this.context.setStatus("LOGIN", () => history.push("/phone/sign"))}>
               Fake it
           </Button>
           </div>

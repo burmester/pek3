@@ -18,7 +18,7 @@ export default class Start extends React.Component {
           <Button
             color="primary"
             block
-            onClick={e => history.push("/webb/code")}
+            onClick={e => history.push("/webb/activate/code")}
           >
             Start activation
           </Button>

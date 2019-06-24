@@ -10,7 +10,7 @@ export default class Start extends React.Component {
     this.intervalID = setInterval(() => {
       this.context.getStatus((body) => {
         if (body.status === "OK") {
-          this.context.setStatus("OK", () => history.push("/webb/activate/receipt"))
+          history.push("/webb/sign/receipt")
         }
       })
     }, 2000);
@@ -18,7 +18,6 @@ export default class Start extends React.Component {
 
   componentWillUnmount() {
     clearInterval(this.intervalID);
-    this.context.setStatus("OK")
   }
 
   render() {

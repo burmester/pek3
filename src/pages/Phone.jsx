@@ -15,6 +15,7 @@ import CheckSign from "./phone/CheckSign";
 import RemoveUser from "./phone/RemoveUser";
 import Contact from "./phone/Contact";
 import About from "./phone/About";
+import Sign from "./phone/Sign";
 
 
 export default class extends React.Component {
@@ -35,6 +36,7 @@ export default class extends React.Component {
           <Route path="/phone/about" component={About} />
           <Route path="/phone/login" component={Login} />
           <Route path="/phone/checkSign" component={CheckSign} />
+          <Route path="/phone/sign" component={Sign} />
         </Switch>
         <Footer />
       </Fragment>

@@ -13,8 +13,22 @@ export default class Start extends React.Component {
       <Fragment>
         <Row>
           <Col >
-            <Button onClick={e => { history.push("/phone");}}>Phone</Button>
-            <Button onClick={e => history.push("/webb/activate")}>Webb</Button>
+            <Button onClick={e => { history.push("/phone"); }}>Phone</Button>
+            <Button onClick={e => history.push("/webb/activate")}>Webb - Activate</Button>
+            <Button onClick={e => {
+              this.context.setStatus("LOGIN", () => {
+                history.push("/webb/login")
+              })
+            }}>Webb - Login</Button>
+            <Button
+              onClick={e => {
+                this.context.setStatus("SIGN", () => {
+                  history.push("/webb/sign")
+                })
+              }}
+            >
+              Webb - Sign
+          </Button>
           </Col>
         </Row>
       </Fragment>

@@ -29,7 +29,7 @@ export default class Start extends React.Component {
                 Start a login or a signature on a Webpage or in a another app.
               </p>
             </div>
-            <Button color="secondary" block onClick={() => history.push('/phone/login')} >Scan QR</Button>
+            <Button color="secondary" block onClick={() => history.push('/phone/login')} >Login</Button>
             <Button color="secondary" block onClick={() => history.push('/phone/checkSign')}>Signature</Button>
           </div>
         </Fragment>)

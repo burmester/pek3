@@ -12,7 +12,7 @@ export default class CheckSign extends React.Component {
     this.intervalID = setInterval(() => {
       this.context.getStatus((body) => {
         if (body.status === "SIGN") {
-          history.push("/phone/sign")
+          this.context.setStatus("SIGN", () => history.push("/phone/sign"))
         }
       })
     }, 2000);

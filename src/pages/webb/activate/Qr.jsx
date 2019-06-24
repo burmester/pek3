@@ -13,7 +13,7 @@ export default class Start extends React.Component {
     this.intervalID = setInterval(() => {
       this.context.getStatus((body) => {
         if (body.status === "SCANED") {
-          history.push("/webb/userId")
+          history.push("/webb/activate/userId")
         }
       })
     }, 2000);

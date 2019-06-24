@@ -4,7 +4,7 @@ import { Form, FormGroup, Input, Button } from "reactstrap";
 import Context from "../../../context/defaultContext";
 import history from "../../../utils/history";
 
-export default class Start extends React.Component {
+export default class Code extends React.Component {
   static contextType = Context;
 
   constructor(props) {
@@ -14,11 +14,18 @@ export default class Start extends React.Component {
     };
   }
 
+  onSubmit = (event) => {
+    event.preventDefault()
+    this.context.setToken(this.state.token, () =>
+      history.push("/webb/activate/qr")
+    )
+  }
+
   render() {
     return (
       <div className="centerdComponent text-center">
-        <h2>Enter teh activation code</h2>
-        <Form>
+        <h2>Enter the activation code</h2>
+        <Form onSubmit={this.onSubmit}>
           <FormGroup>
             <Input
               type="tel"
@@ -26,16 +33,10 @@ export default class Start extends React.Component {
               onChange={e => this.setState({ token: e.target.value })}
             />
           </FormGroup>
-        </Form>
-        <Button
-          onClick={e =>
-            this.context.setToken(this.state.token, () =>
-              history.push("/webb/qr")
-            )
-          }
-        >
-          Next
+          <Button type="submit">
+            Next
         </Button>
+        </Form>
       </div>
     );
   }

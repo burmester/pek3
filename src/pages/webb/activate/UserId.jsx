@@ -29,7 +29,7 @@ export default class Start extends React.Component {
         </Form>
         <Button
           onClick={e => {
-            this.context.setUserName(this.state.userName, () => history.push("/webb/wait"))
+            this.context.setUserName(this.state.userName, () => history.push("/webb/activate/wait"))
           }}
         >
           Next
