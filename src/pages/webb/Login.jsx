@@ -1,33 +1,54 @@
-import React from "react";
-import QRCode from "qrcode.react";
+import React, { Fragment } from "react";
+import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 
 import Context from "../../context/defaultContext";
 import history from "../../utils/history";
 
-export default class Start extends React.Component {
+export default class Login extends React.Component {
   static contextType = Context;
-  intervalID = 0;
-
-  componentDidMount() {
-    this.intervalID = setInterval(() => {
-      this.context.getStatus((body) => {
-        if (body.status === "SIGNED") {
-          this.context.logIn(() => history.push("/webb"))
-        }
-      })
-    }, 2000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.intervalID);
-  }
 
   render() {
     return (
-      <div className="centerdComponent text-center">
-        <h2>Use your phone to scan this QR-code</h2>
-        <QRCode value="login" />
-      </div>
+      <Fragment>
+        <div className="hero d-flex align-items-center justify-content-center">
+          <i
+            className="material-icons"
+            style={{
+              fontSize: "50px",
+              color: "#005fa5"
+            }}
+          >
+            lock_outline
+          </i>
+        </div>
+        <div className="container">
+          <div className="centerdComponent text-center"
+          style={{marginTop:"0"}}>
+            <h2>Digital ID</h2>
+          </div>
+          <Form>
+            <FormGroup>
+              <Label for="userName">Personal ID <span>6-35 digits</span></Label>
+              <Input
+                style={{textAlign:"left"}}
+                id="userName"
+                autoFocus />
+            </FormGroup>
+            <FormGroup check style={{marginBottom:"20px", marginTop:"-10px"}}>
+              <Label check>
+                <Input type="checkbox" /> Save my Personal ID
+              </Label>
+            </FormGroup>
+            <Button color="primary" block onClick={e => history.push("/webb/login/qr")}>
+              Log in
+            </Button>
+          </Form>
+          <Button block onClick={e => history.goBack()}
+          className="athenaBack own">
+             Select a different log in method
+            </Button>
+        </div>
+      </Fragment>
     );
   }
 }

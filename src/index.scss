@@ -31,6 +31,14 @@ input.disc {
     -webkit-text-security: disc;
 }
 
+.btn.athenaBack.own {
+    background: #f1f1f1;
+    color: #005fa5;
+    margin-top: 20px;
+    border:none;
+    border-radius: 0;
+}
+
 .btn {
     &.btn-primary {
         background: #005fa5;

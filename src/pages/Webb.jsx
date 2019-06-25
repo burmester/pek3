@@ -11,6 +11,7 @@ import SignActivation from "./webb/activate/Sign";
 import Wait from "./webb/activate/Wait";
 import Receipt from "./webb/activate/Receipt";
 import Login from "./webb/Login";
+import LoginQR from "./webb/LoginQr";
 import Sign from "./webb/sign/Sign";
 import ReceiptSign from "./webb/sign/Receipt";
 import Start from "./webb/Start";
@@ -24,7 +25,8 @@ export default class extends React.Component {
       <Fragment>
         <Switch>
           <Route exact path="/webb" component={Start} />
-          <Route path="/webb/login" component={Login} />
+          <Route exact path="/webb/login" component={Login} />
+          <Route path="/webb/login/qr" component={LoginQR} />
           <Route exact path="/webb/activate" component={Activate} />
           <Route path="/webb/activate/code" component={Code} />
           <Route path="/webb/activate/qr" component={Qr} />
