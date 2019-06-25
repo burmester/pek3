@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Form, FormGroup, Input, Button } from "reactstrap";
+import { Form, FormGroup, Button } from "reactstrap";
 
 import Header from "../../components/phone/Header";
 
@@ -26,20 +26,20 @@ export default class RemoveUser extends React.Component {
             <h2>Remove your profile</h2>
             <p>To remove your profile enter you passcode and press OK.</p>
           </div>
-          <Form onSubmit={this.onSubmit.bind(this)}>
+          <Form>
             <FormGroup>
-              <Input
-                maxLength="6"
-                type="password"
-                placeholder="Passcode"
-                pattern="[0-9]*" 
-                inputMode="numeric"
-              />
+            <input
+                  className="form-control disc"
+                  type="number"
+                  pattern="[0-9]*"
+                  placeholder="Passcode"
+                  inputmode="numeric"
+                  autofocus />
             </FormGroup>
-            <Button color="danger" block type="submit">
+          </Form>
+          <Button color="danger" block onClick={this.onSubmit.bind(this)}>
               Delete
             </Button>
-          </Form>
         </div>
       </Fragment>)
   }
