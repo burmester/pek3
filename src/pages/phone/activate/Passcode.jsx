@@ -40,6 +40,7 @@ export default class Passcode extends React.Component {
   };
 
   onSubmit = e => {
+    e.preventDefault()
     if (
       !this.state.invalideCode &&
       !this.state.noSameCode &&

@@ -12,6 +12,7 @@ export default class Start extends React.Component {
       <div className="centerdComponent text-center">
         <h2>Choose your username</h2>
         <Form onSubmit={e => {
+            e.preventDefault()
             history.push("/webb/activate/sign")
           }}>
           <FormGroup>

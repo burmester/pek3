@@ -14,8 +14,8 @@ export default class Code extends React.Component {
     };
   }
 
-  onSubmit = (event) => {
-    event.preventDefault()
+  onSubmit = (e) => {
+    e.preventDefault()
     this.context.setToken(this.state.token, () =>
       history.push("/webb/activate/qr")
     )

@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Form, FormGroup, Input, Button } from "reactstrap";
+import { Form, FormGroup, Button } from "reactstrap";
 
 import Context from "../../context/defaultContext";
 import history from "../../utils/history";
@@ -52,33 +52,18 @@ export default class Passcode extends React.Component {
               I identify myself at: <span>Handelsbanken</span>
             </div>
             <div className="data">
-            &lt;Transactional information&gt;
+              &lt;Transactional information&gt;
             </div>
             <Form onSubmit={this.onSubmit.bind(this)}>
               <FormGroup>
-              <input
-                  className="form-control"
-                  maxLength="6"
-                  type="password"
-                  placeholder="Passcode"
-                  pattern="[0-9]*"
-                  inputMode="numeric"
-                />
                 <input
-                className="form-control"
                   maxLength="6"
-                  type="password"
-                  placeholder="Passcode"
+                  className="form-control disc"
+                  type="number"
                   pattern="[0-9]*"
-                  inputMode="numeric"
-                />
-                <input className="form-control disc" type="number" pattern="[0-9]*" inputmode="numeric" min="1111" max="9999" autofocus />
-                <Input
-                  className="disc"
-                  maxLength="6"
-                  type="password"
-                  placeholder="number"
-                />
+                  placeholder="Passcode"
+                  inputmode="numeric"
+                  autofocus />
               </FormGroup>
               <Button color="primary" block type="submit">
                 Sign
