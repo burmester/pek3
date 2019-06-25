@@ -15,6 +15,9 @@ import LoginQR from "./webb/LoginQr";
 import Sign from "./webb/sign/Sign";
 import ReceiptSign from "./webb/sign/Receipt";
 import Start from "./webb/Start";
+import Transfer from "./webb/sign/Transfer";
+import Review from "./webb/sign/Review";
+
 
 
 
@@ -26,16 +29,18 @@ export default class extends React.Component {
         <Switch>
           <Route exact path="/webb" component={Start} />
           <Route exact path="/webb/login" component={Login} />
-          <Route path="/webb/login/qr" component={LoginQR} />
+          <Route exact path="/webb/login/qr" component={LoginQR} />
           <Route exact path="/webb/activate" component={Activate} />
-          <Route path="/webb/activate/code" component={Code} />
-          <Route path="/webb/activate/qr" component={Qr} />
-          <Route path="/webb/activate/userName" component={UserName} />
-          <Route path="/webb/activate/sign" component={SignActivation} />
-          <Route path="/webb/activate/wait" component={Wait} />
-          <Route path="/webb/activate/receipt" component={Receipt} />
+          <Route exact path="/webb/activate/code" component={Code} />
+          <Route exact path="/webb/activate/qr" component={Qr} />
+          <Route exact path="/webb/activate/userName" component={UserName} />
+          <Route exact path="/webb/activate/sign" component={SignActivation} />
+          <Route exact path="/webb/activate/wait" component={Wait} />
+          <Route exact path="/webb/activate/receipt" component={Receipt} />
+          <Route exact path="/webb/transfer" component={Transfer} />
+          <Route exact path="/webb/review" component={Review} />
           <Route exact path="/webb/sign" component={Sign} />
-          <Route path="/webb/sign/receipt" component={ReceiptSign} />
+          <Route exact path="/webb/sign/receipt" component={ReceiptSign} />
         </Switch>
       </Fragment>
     );

@@ -17,7 +17,7 @@ export default class Receipt extends React.Component {
           <hr />
           <h3>Activation complete</h3>
           <p>The Digital ID app has been activated.</p>
-          <Button onClick={e => history.push("/webb")} color="link">
+          <Button onClick={e => history.push("/webb/activate")} color="link">
             Go to home page
             </Button>
           <div style={{ marginTop: "20px" }} className="footer">

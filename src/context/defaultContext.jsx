@@ -2,5 +2,6 @@ import React from 'react';
 
 export default React.createContext({
   data: [],
-  loading: false
+  loading: false,
+  transferData: false
 });

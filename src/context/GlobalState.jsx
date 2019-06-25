@@ -6,7 +6,8 @@ class GlobalState extends Component {
   state = {
     data: undefined,
     loading: false,
-    showMenu: false
+    showMenu: false,
+    transferData: false
   };
 
   componentDidMount() {
@@ -132,6 +133,13 @@ class GlobalState extends Component {
     this.removeData(callback)
   }
 
+  setTransferData = (data, callback) => {
+    this.setState(
+      { transferData: data }, callback
+    );
+
+  }
+
   toggleMenu = () => {
     this.setState({ showMenu: !this.state.showMenu });
   }
@@ -153,6 +161,8 @@ class GlobalState extends Component {
           toggleMenu: this.toggleMenu,
           logOut: this.logOut,
           logIn: this.logIn,
+          setTransferData: this.setTransferData,
+          transferData: this.state.transferData,
         }}
       >
         {this.props.children}
