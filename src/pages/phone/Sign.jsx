@@ -28,13 +28,13 @@ export default class Passcode extends React.Component {
             </div>
             <Form onSubmit={this.onSubmit.bind(this)}>
               <FormGroup>
-                <input
+              <input
+                  className="form-control disc"
+                  type="number"
                   pattern="[0-9]*"
-                  inputMode="numeric"
-                  maxLength="6"
-                  type="password"
                   placeholder="Passcode"
-                />
+                  inputmode="numeric"
+                  autofocus />
               </FormGroup>
               <Button color="primary" block type="submit">
                 Login
@@ -57,7 +57,6 @@ export default class Passcode extends React.Component {
             <Form onSubmit={this.onSubmit.bind(this)}>
               <FormGroup>
                 <input
-                  maxLength="6"
                   className="form-control disc"
                   type="number"
                   pattern="[0-9]*"

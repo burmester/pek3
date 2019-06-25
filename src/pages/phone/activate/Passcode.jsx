@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Form, FormGroup, Input, Button } from "reactstrap";
+import { Form, FormGroup, Button } from "reactstrap";
 
 import Context from "../../../context/defaultContext";
 import history from "../../../utils/history";
@@ -80,27 +80,28 @@ export default class Passcode extends React.Component {
           </div>
           <Form onSubmit={this.onSubmit.bind(this)}>
             <FormGroup>
-              <Input
-                maxLength="6"
-                type="password"
-                pattern="[0-9]*" 
-                inputMode="numeric"
-                placeholder="Passcode"
-                onChange={this.passcodeChange}
-                value={this.state.passcode}
-                invalid={this.state.invalideCode}
-              />
+                <input
+                  className="form-control disc"
+                  type="number"
+                  pattern="[0-9]*"
+                  inputmode="numeric"
+                  placeholder="Repeat passcode"
+                  onChange={this.passcodeChange}
+                  value={this.state.passcode}
+                  invalid={this.state.invalideCode}
+                  autofocus
+                   />
             </FormGroup>
             <FormGroup>
-              <Input
-                type="password"
-                maxLength="6"
-                pattern="[0-9]*"
-                inputMode="numeric"
-                placeholder="Repeat passcode"
-                invalid={this.state.noSameCode}
-                onChange={this.repeatPasscodeChange}
-              />
+            <input
+                  className="form-control disc"
+                  type="number"
+                  pattern="[0-9]*"
+                  inputmode="numeric"
+                  placeholder="Repeat passcode"
+                  invalid={this.state.noSameCode}
+                  onChange={this.repeatPasscodeChange}
+                   />
             </FormGroup>
             <p
             style={{
