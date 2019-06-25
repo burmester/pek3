@@ -24,8 +24,9 @@ export default class Login extends React.Component {
     this.handleError = this.handleError.bind(this);
   }
   handleScan(data) {
-    if (data && data.action === "LOGIN")
+    if (data && data.action === "login")
       this.context.setStatus("LOGIN", () => history.push("/phone/sign"))
+    if (data) this.setState({ result: data.action })
   }
   handleError(err) {
     this.setState({ error: err.message });

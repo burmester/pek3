@@ -11,21 +11,19 @@ export default class Start extends React.Component {
     return (
       <div className="centerdComponent text-center">
         <h2>Choose your username</h2>
-        <Form>
+        <Form onSubmit={e => {
+            history.push("/webb/activate/sign")
+          }}>
           <FormGroup>
             <Input
               type="text"
               placeholder="Username"
             />
           </FormGroup>
-        </Form>
-        <Button
-          onClick={e => {
-            history.push("/webb/activate/sign")
-          }}
-        >
+          <Button type="submit">
           Next
         </Button>
+        </Form>
       </div>
     );
   }

@@ -27,6 +27,10 @@ body {
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+input.disc {
+    -webkit-text-security: disc;
+}
+
 .btn {
     &.btn-primary {
         background: #005fa5;

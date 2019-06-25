@@ -77,7 +77,7 @@ export default class Passcode extends React.Component {
             <br />
             Palindrome (123321, 154451)
           </div>
-          <Form>
+          <Form onSubmit={this.onSubmit.bind(this)}>
             <FormGroup>
               <Input
                 maxLength="6"
@@ -101,8 +101,7 @@ export default class Passcode extends React.Component {
                 onChange={this.repeatPasscodeChange}
               />
             </FormGroup>
-          </Form>
-          <p
+            <p
             style={{
               color: "#dc3545",
               visibility: this.state.error ? "" : "hidden"
@@ -110,9 +109,10 @@ export default class Passcode extends React.Component {
           >
             You need to enter a correct passcode.
           </p>
-          <Button color="primary" block onClick={this.onSubmit.bind(this)}>
+          <Button color="primary" block type="submit">
             Continue
           </Button>
+          </Form>
         </div>
       </Fragment>
     );

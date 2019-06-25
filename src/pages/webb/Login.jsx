@@ -26,7 +26,7 @@ export default class Start extends React.Component {
     return (
       <div className="centerdComponent text-center">
         <h2>Use your phone to scan this QR-code</h2>
-        <QRCode value="LOGIN" level="H" />
+        <QRCode value="login" level="H" />
       </div>
     );
   }
