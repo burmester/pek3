@@ -4,21 +4,25 @@ import { Button } from 'reactstrap';
 import Context from '../../../context/defaultContext';
 import history from '../../../utils/history';
 
-export default class Start extends React.Component {
+export default class Receipt extends React.Component {
   static contextType = Context;
 
   render() {
     return (
       <Fragment>
-        <div className="container">
-          <div className="centerdComponent text-center">
-            <h2>Confirmation</h2>
-            <p>
-              Your security app is now ready to use.
-            </p>
+        <div className="container espresso">
+          <h1>
+            Activate Digital ID
+          </h1>
+          <hr />
+          <h3>Activation complete</h3>
+          <p>The Digital ID app has been activated.</p>
+          <Button onClick={e => history.push("/webb")} color="link">
+            Go to home page
+            </Button>
+          <div style={{ marginTop: "20px" }} className="footer">
           </div>
-          <Button color="primary" block onClick={e => history.push('/webb')}>OK</Button>
         </div>
-      </Fragment>)
+      </Fragment >)
   }
 }

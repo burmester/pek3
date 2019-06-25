@@ -35,7 +35,7 @@ input.disc {
     background: #f1f1f1;
     color: #005fa5;
     margin-top: 20px;
-    border:none;
+    border: none;
     border-radius: 0;
 }
 
@@ -149,5 +149,63 @@ input.form-control {
     100% {
         -webkit-transform: rotate(359deg);
         transform: rotate(359deg);
+    }
+}
+
+.espresso {
+    font-size: 14px;
+
+    h1 {
+        font-size: 22px;
+        margin: 4px 0 10px 0;
+        color: #222;
+        font-weight: bold;
+    }
+
+    h3 {
+        font-size: 16px;
+        margin: 4px 0 16px 0;
+        color: #222;
+        font-weight: bold;
+
+        > span {
+            color: #999;
+            font-size: 14px;
+            padding-left: 10px;
+        }
+    }
+
+    hr {
+        border-top: 1px solid #AAA;
+    }
+
+    .btn.btn-link {
+        text-decoration: underline !important;
+    }
+
+    input {
+        border-radius: 0;
+        text-align: left;
+        font-size: 14px;
+    }
+
+    .qrCode, .spinnerContainer  {
+        margin: 30px 0;
+        text-align: center;
+    }
+
+    .footer {
+        height: 40px;
+        background: #CCC;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        .btn {
+            font-size: 14px;
+            padding: 2px 6px;
+            color: #222;
+            border-color: #222;
+            margin: 0 5px 0 0;
+        }
     }
 }

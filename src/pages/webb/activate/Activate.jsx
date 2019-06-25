@@ -10,18 +10,33 @@ export default class Start extends React.Component {
   render() {
     return (
       <Fragment>
-        <div className="container">
-          <div className="centerdComponent text-center">
-            <h2>Activate your security app</h2>
-            <p>You will need you card, cardreader and a mobilephone.</p>
-          </div>
+        <div className="container espresso">
+          <h1>
+          Activate Digital ID
+          </h1>
+          <hr />
+          <h3>Activate your Digital ID app</h3>
+          <p>
+            A one off activation is required for every device. To start the activation process you will need to logged in with your logon card, card reader and cable.
+          </p>
+          <ol>
+            <li>
+              Download Handelsbanken Digital ID from App Store or Google Play onto the device you wish to activate.
+              </li>
+            <li>
+              Start the activation process by clicking the link below.
+              </li>
+          </ol>
+          <p>
+            Please keep your cable connected throughout the process and have your mobile or tablet ready.
+            </p>
           <Button
-            color="primary"
-            block
+            color="link"
             onClick={e => history.push("/webb/activate/code")}
           >
             Start activation
           </Button>
+          <div className="footer"></div>
         </div>
       </Fragment>
     );

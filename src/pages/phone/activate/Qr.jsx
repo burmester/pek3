@@ -26,7 +26,7 @@ export default class Qr extends React.Component {
   handleScan(data) {
     const token = this.context.data.token;
     if (data === token) {
-      this.context.scanOk(() => history.push("/phone/wait"));
+      this.context.scanOk(() => history.push("/phone/passcode"));
     } else {
       this.setState({ result: "Not correct QR, try agian! ", token: data });
     }
@@ -44,7 +44,7 @@ export default class Qr extends React.Component {
             <p>You need to allow the camera</p>
             <Button
               onClick={e =>
-                this.context.scanOk(() => history.push("/phone/wait"))
+                this.context.scanOk(() => history.push("/phone/passcode"))
               }
             >
               Fake it

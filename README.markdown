@@ -6,14 +6,14 @@
 2. Phone: Code - token: generated_1 , status: undefiend
 2. Webb: Code -  token: generated_2 -> generated_1 , status: undefiend
 
-3. Webb: QR - token: generated_1, status: SCANED?
-3. Phone: QR - token: generated_1, status: SCANED!
+3. Webb: Username - token: generated_1, status: undefiend
+3. Phone: QR - token: generated_1 , status: undefiend
 
-4. Phone: Wait - token: generated_1, status: SIGNED?
-4. Webb: Username - token: generated_1, status: SCANED
+4. Webb: Sign - token: generated_1, status: undefiend
+4. Phone: QR - token: generated_1 , status: undefiend
 
-5. Phone: Wait - token: generated_1, status: SIGNED?
-5. Webb: Sign - token: generated_1, status: SIGNED!
+5. Webb: QR - token: generated_1, status: SCANED?
+5. Phone: QR - token: generated_1, status: SCANED!
 
 6. Webb: Wait - token: generated_1, status: OK?
 6. Phone: Passcode - token: generated_1, status: OK!
