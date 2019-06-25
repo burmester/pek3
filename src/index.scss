@@ -16,11 +16,15 @@ body {
     }
 }
 
-pre {
-    border-radius: 5px;
-    background: #DDD;
-    padding: 10px;
-    margin: 0 -40px;
+.data {
+    background: #FFF;
+    padding: 15px;
+    margin: 20px -15px;
+    font-size: 12px;
+    min-height: 100px;
+    border-bottom: 1px solid #ced4da;
+    border-top: 1px solid #ced4da;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .btn {
@@ -97,6 +101,19 @@ input.form-control {
 
 .centerdComponent {
     margin: 20px 40px 40px;
+    font-size: 14px;
+}
+
+.topContainer {
+    background: #FFF;
+    padding: 15px;
+    margin: 0 -15px 20px;
+    font-size: 14px;
+    border-bottom: 1px solid #ced4da;
+
+    >span {
+        font-weight: 700;
+    }
 }
 
 .react-confirm-alert-body {
@@ -109,16 +126,16 @@ input.form-control {
 
 .spinner {
     animation: spin 1.5s infinite linear;
-  }
-  
-  @keyframes spin {
+}
+
+@keyframes spin {
     0% {
-      -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
     }
-  
+
     100% {
-      -webkit-transform: rotate(359deg);
-      transform: rotate(359deg);
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
     }
-  }
+}

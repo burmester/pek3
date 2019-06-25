@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Button } from 'reactstrap';
+import { Form, FormGroup, Input, Button } from "reactstrap";
 
 import Header from "../../components/phone/Header";
 
@@ -9,6 +9,14 @@ import history from '../../utils/history';
 export default class RemoveUser extends React.Component {
   static contextType = Context;
 
+  onSubmit = (e) => {
+    e.preventDefault();
+    this.context.deleteToken(() => {
+      alert("Your profile has been removed")
+      history.push('/phone')
+    })
+  }
+
   render() {
     return (
       <Fragment>
@@ -16,15 +24,22 @@ export default class RemoveUser extends React.Component {
         <div className="container">
           <div className="centerdComponent text-center">
             <h2>Remove your profile</h2>
-            <p>You will no longer be able to use Digital ID to Loggin or Sign.</p>
-            <p>Are you sure?</p>
+            <p>To remove your profile enter you passcode and press OK.</p>
           </div>
-          <div className="d-flex justify-content-around">
-            <Button style={{ width: "100px" }} onClick={e => history.push('/phone')}>No</Button>
-            <Button outline style={{ width: "100px" }} color="danger" onClick={e => {
-              this.context.deleteToken(() => history.push('/phone'))
-            }}>Yes</Button>
-          </div>
+          <Form onSubmit={this.onSubmit.bind(this)}>
+            <FormGroup>
+              <Input
+                maxLength="6"
+                type="password"
+                placeholder="Passcode"
+                pattern="[0-9]*" 
+                inputMode="numeric"
+              />
+            </FormGroup>
+            <Button color="danger" block type="submit">
+              Delete
+            </Button>
+          </Form>
         </div>
       </Fragment>)
   }

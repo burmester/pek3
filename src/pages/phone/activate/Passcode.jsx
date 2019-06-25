@@ -64,24 +64,26 @@ export default class Passcode extends React.Component {
         <div className="container">
           <div className="centerdComponent text-center">
             <h2>Choose your passcode</h2>
-            Number of characters:
+            Number of characters: 6
             <br />
-            6 Valid characters: 0-9 (digits)
+            Valid characters: 0-9 (digits)
             <br />
             <br />
             Not allowed:
             <br />
-            Six identical digits, e.g. 111111
+            Six identical digits (111111)
             <br />
             Sequences starting or ending with 1 (123456, 654321)
             <br />
-            Palindrome, e.g. 123321, 154451
+            Palindrome (123321, 154451)
           </div>
           <Form>
             <FormGroup>
               <Input
                 maxLength="6"
                 type="password"
+                pattern="[0-9]*" 
+                inputMode="numeric"
                 placeholder="Passcode"
                 onChange={this.passcodeChange}
                 value={this.state.passcode}
@@ -92,6 +94,8 @@ export default class Passcode extends React.Component {
               <Input
                 type="password"
                 maxLength="6"
+                pattern="[0-9]*"
+                inputMode="numeric"
                 placeholder="Repeat passcode"
                 invalid={this.state.noSameCode}
                 onChange={this.repeatPasscodeChange}

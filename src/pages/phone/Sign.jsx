@@ -22,16 +22,15 @@ export default class Passcode extends React.Component {
     if (this.context.data && this.context.data.status === "LOGIN") {
       return (
         <Fragment>
-          <div className="hero d-flex align-items-center justify-content-center">
-            <i className="material-icons">lock_outline</i>
-          </div>
           <div className="container">
-            <div className="centerdComponent text-center">
-              <h2>I identify my self at Handelsbanken</h2>
+            <div className="topContainer">
+              I identify myself at: <span>Handelsbanken</span>
             </div>
             <Form onSubmit={this.onSubmit.bind(this)}>
               <FormGroup>
                 <Input
+                  pattern="[0-9]*"
+                  inputMode="numeric"
                   maxLength="6"
                   type="password"
                   placeholder="Passcode"
@@ -48,17 +47,12 @@ export default class Passcode extends React.Component {
     if (this.context.data && this.context.data.status === "SIGN") {
       return (
         <Fragment>
-          <div className="hero d-flex align-items-center justify-content-center">
-            <i className="material-icons">lock_outline</i>
-          </div>
           <div className="container">
-            <div className="centerdComponent text-center">
-              <h2>Signing</h2>
-              <p className="text-left">
-                <pre>
-                  Transactional data
-            </pre>
-              </p>
+            <div className="topContainer">
+              I identify myself at: <span>Handelsbanken</span>
+            </div>
+            <div className="data">
+            &lt;Transactional information&gt;
             </div>
             <Form onSubmit={this.onSubmit.bind(this)}>
               <FormGroup>
@@ -66,6 +60,8 @@ export default class Passcode extends React.Component {
                   maxLength="6"
                   type="password"
                   placeholder="Passcode"
+                  pattern="[0-9]*"
+                  inputMode="numeric"
                 />
               </FormGroup>
               <Button color="primary" block type="submit">

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Container, Col, Row, Button } from "reactstrap";
 
 import history from "../utils/history";

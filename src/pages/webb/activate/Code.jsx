@@ -31,6 +31,8 @@ export default class Code extends React.Component {
               type="tel"
               placeholder="Activation code"
               onChange={e => this.setState({ token: e.target.value })}
+              pattern="[0-9]*" 
+              inputMode="numeric"
             />
           </FormGroup>
           <Button type="submit">

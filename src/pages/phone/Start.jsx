@@ -26,10 +26,10 @@ export default class Start extends React.Component {
             <div className="centerdComponent text-center">
               <h2>Ready to use</h2>
               <p>
-                Start a login or a signature on a Webpage or in a another app.
+                Start a login or a signature on Online Banking or in a another app.
               </p>
             </div>
-            <Button color="secondary" block onClick={() => history.push('/phone/login')} >Login</Button>
+            <Button color="secondary" block onClick={() => history.push('/phone/login')} >Log in</Button>
             <Button color="secondary" block onClick={() => history.push('/phone/checkSign')}>Sign</Button>
           </div>
         </Fragment>)
@@ -43,7 +43,7 @@ export default class Start extends React.Component {
         <div className="container">
           <div className="centerdComponent text-center">
             <h2>Get started now</h2>
-            <p>You need to login to the internet service with your card reader with cable.</p>
+            <p>You need to login to the Online Banking with your card reader with cable.</p>
           </div>
           <Button color="primary" block onClick={e => history.push('/phone/code')}>Get started</Button>
         </div>

@@ -30,7 +30,7 @@ export default class Code extends React.Component {
           <div className="centerdComponent text-center">
             <h2>Activation code</h2>
             <p>
-              Enter this activation code in the internet service to start the
+              Enter this activation code in Online Banking to start the
               activation.
             </p>
           </div>
@@ -44,7 +44,7 @@ export default class Code extends React.Component {
               {token.substring(0, 4)} {token.substring(4, 8)}
             </div>
           </div>
-          <div className="centerdComponent text-center">
+          <div className="centerdComponent text-center d-none">
             <p>
               Then wait until the internet serice ask you to open the QR
               scanner.
@@ -55,7 +55,7 @@ export default class Code extends React.Component {
             block
             onClick={e => history.push("/phone/qr")}
           >
-            Open QR scannner
+            QR scannner
           </Button>
         </div>
       </Fragment>
