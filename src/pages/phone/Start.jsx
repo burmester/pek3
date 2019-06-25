@@ -30,7 +30,7 @@ export default class Start extends React.Component {
               </p>
             </div>
             <Button color="secondary" block onClick={() => history.push('/phone/login')} >Login</Button>
-            <Button color="secondary" block onClick={() => history.push('/phone/checkSign')}>Signature</Button>
+            <Button color="secondary" block onClick={() => history.push('/phone/checkSign')}>Sign</Button>
           </div>
         </Fragment>)
     }

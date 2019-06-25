@@ -17,7 +17,7 @@ export default class Start extends React.Component {
               Your security app is now ready to use.
             </p>
           </div>
-          <Button color="primary" block onClick={e => history.push('/webb/start')}>OK</Button>
+          <Button color="primary" block onClick={e => history.push('/webb')}>OK</Button>
         </div>
       </Fragment>)
   }

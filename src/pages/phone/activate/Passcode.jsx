@@ -45,9 +45,10 @@ export default class Passcode extends React.Component {
       !this.state.noSameCode &&
       this.state.passcode.length === 6
     )
-      this.context.setPasscode(this.state.passcode, () =>
+      this.context.setStatus("OK", () => {
+        localStorage.setItem("data", JSON.stringify(this.context.data))
         history.push("/phone/receipt")
-      );
+      })
     else {
       this.setState({ error: true });
     }

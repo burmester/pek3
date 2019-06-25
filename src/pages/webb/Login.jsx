@@ -11,8 +11,8 @@ export default class Start extends React.Component {
   componentDidMount() {
     this.intervalID = setInterval(() => {
       this.context.getStatus((body) => {
-        if (body.status === "OK") {
-          history.push("/webb/start")
+        if (body.status === "SIGNED") {
+          this.context.logIn(() => history.push("/webb"))
         }
       })
     }, 2000);

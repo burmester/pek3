@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Col, Row, Button } from "reactstrap";
+import { Container, Col, Row, Button } from "reactstrap";
 
 import history from "../utils/history";
 
@@ -10,28 +10,14 @@ export default class Start extends React.Component {
 
   render() {
     return (
-      <Fragment>
+      <Container style={{paddingTop: "30px"}}>
         <Row>
           <Col >
-            <Button onClick={e => { history.push("/phone"); }}>Phone</Button>
-            <Button onClick={e => history.push("/webb/activate")}>Webb - Activate</Button>
-            <Button onClick={e => {
-              this.context.setStatus("LOGIN", () => {
-                history.push("/webb/login")
-              })
-            }}>Webb - Login</Button>
-            <Button
-              onClick={e => {
-                this.context.setStatus("SIGN", () => {
-                  history.push("/webb/sign")
-                })
-              }}
-            >
-              Webb - Sign
-          </Button>
+            <Button block onClick={e => { history.push("/phone"); }}>Phone</Button>
+            <Button block onClick={e => history.push("/webb")}>Webb</Button>
           </Col>
         </Row>
-      </Fragment>
+      </Container>
     );
   }
 }

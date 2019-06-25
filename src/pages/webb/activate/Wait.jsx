@@ -10,7 +10,10 @@ export default class Start extends React.Component {
     this.intervalID = setInterval(() => {
       this.context.getStatus((body) => {
         if (body.status === "OK") {
-          this.context.setStatus("OK", () => history.push("/webb/activate/receipt"))
+          this.context.setStatus("OK", () => {
+            localStorage.setItem("data", JSON.stringify(this.context.data))
+            history.push("/webb/activate/receipt")
+          })
         }
       })
     }, 2000);

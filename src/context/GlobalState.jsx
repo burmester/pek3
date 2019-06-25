@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import Context from "./defaultContext";
-import history from "../utils/history";
 
 class GlobalState extends Component {
   state = {
@@ -16,8 +15,7 @@ class GlobalState extends Component {
       this.setState(
         {
           data: JSON.parse(data)
-        },
-        () => history.push("/")
+        }
       );
     } else {
       this.setState({
@@ -41,6 +39,26 @@ class GlobalState extends Component {
     );
   };
 
+  logOut = callback => {
+    this.setState(
+      { data: { ...this.state.data, status: "LOGOUT" } },
+      () => {
+        localStorage.setItem("data", JSON.stringify(this.state.data))
+        callback();
+      }
+    );
+  }
+
+  logIn = callback => {
+    this.setState(
+      { data: { ...this.state.data, status: "OK" } },
+      () => {
+        localStorage.setItem("data", JSON.stringify(this.state.data))
+        callback();
+      }
+    );
+  }
+
   removeData = callback => {
     localStorage.clear();
     this.setState(
@@ -59,7 +77,7 @@ class GlobalState extends Component {
 
 
   signOK = callback => {
-    this.setStatus("OK", callback);
+    this.setStatus("SIGNED", callback);
   };
 
   setToken = (token, callback) => {
@@ -67,17 +85,6 @@ class GlobalState extends Component {
       { data: { ...this.state.data, token: token } },
       callback
     );
-  };
-
-  setUserName = (userName, callback) => {
-    this.setStatus("USERNAME", callback);
-  };
-
-  setPasscode = (passcode, callback) => {
-    this.setStatus("OK", arg => {
-      localStorage.setItem("data", JSON.stringify(this.state.data))
-      callback(arg)
-    });
   };
 
   setStatus = async (status, callback) => {
@@ -126,7 +133,7 @@ class GlobalState extends Component {
   }
 
   toggleMenu = () => {
-    this.setState({showMenu: !this.state.showMenu});
+    this.setState({ showMenu: !this.state.showMenu });
   }
 
   render() {
@@ -143,9 +150,9 @@ class GlobalState extends Component {
           setToken: this.setToken,
           scanOk: this.scanOk,
           signOK: this.signOK,
-          setPasscode: this.setPasscode,
-          setUserName: this.setUserName,
-          toggleMenu: this.toggleMenu
+          toggleMenu: this.toggleMenu,
+          logOut: this.logOut,
+          logIn: this.logIn,
         }}
       >
         {this.props.children}

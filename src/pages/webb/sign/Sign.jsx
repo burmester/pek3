@@ -9,7 +9,7 @@ export default class Start extends React.Component {
   componentDidMount() {
     this.intervalID = setInterval(() => {
       this.context.getStatus((body) => {
-        if (body.status === "OK") {
+        if (body.status === "SIGNED") {
           history.push("/webb/sign/receipt")
         }
       })

@@ -7,6 +7,10 @@ import history from '../../../utils/history';
 export default class Start extends React.Component {
   static contextType = Context;
 
+  componentDidMount () {
+    this.context.setStatus("OK")
+  }
+
   render() {
     return (
       <Fragment>
@@ -17,7 +21,7 @@ export default class Start extends React.Component {
               You have now sign:
             </p>
           </div>
-          <Button color="primary" block onClick={e => history.push('/webb/start')}>OK</Button>
+          <Button color="primary" block onClick={e => history.push('/webb')}>OK</Button>
         </div>
       </Fragment>)
   }

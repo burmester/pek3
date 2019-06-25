@@ -1,59 +1,44 @@
-# About the project
 
-Prototype Pek3
+#Activate-flow:
+1. Phone: Activate - token: generated_1 , status: undefiend
+1. Webb: Activate - token: generated_2 , status: undefiend
 
-# Code
+2. Phone: Code - token: generated_1 , status: undefiend
+2. Webb: Code -  token: generated_2 -> generated_1 , status: undefiend
 
-This project is based on [Create React App v2](https://github.com/facebookincubator/create-react-app) and [netlify-lambda v1](https://github.com/netlify/netlify-lambda). (For more information about Create react App, check their full [documentation](https://github.com/facebookincubator/create-react-app#create-react-app).)
+3. Webb: QR - token: generated_1, status: SCANED?
+3. Phone: QR - token: generated_1, status: SCANED!
 
-The main addition is a new folder: `src/lambda`. Each JavaScript file in there will automatically be prepared for Lambda function deployment.
+4. Phone: Wait - token: generated_1, status: SIGNED?
+4. Webb: Username - token: generated_1, status: SCANED
 
-As an example, we've included a small `src/lambda/hello.js` function, which will be deployed to `/.netlify/functions/hello`.
+5. Phone: Wait - token: generated_1, status: SIGNED?
+5. Webb: Sign - token: generated_1, status: SIGNED!
 
-## Babel/webpack compilation
+6. Webb: Wait - token: generated_1, status: OK?
+6. Phone: Passcode - token: generated_1, status: OK!
 
-All functions are compiled with webpack using the Babel Loader, so you can use modern JavaScript, import npm modules, etc., without any extra setup.
+7. Phone: Receipt - token: generated_1, status: OK
+7. Webb: Receipt - token: generated_1, status: OK
 
-## Local Development
+#Login-flow:
 
-Before developing, clone the repository and run `yarn` from the root of the repo to install all dependencies.
+1. Webb: Login - status: SIGNED?
+1. Phone: Login - status: LOGIN!
 
-### Option 1: Starting both servers at once
+2. Webb: Login - status: SIGNED?
+2. Phone: Sign - status: SIGNED!
 
-Most people should be able to get up and running just by running:
+3. Webb: Start - status: OK
+2. Phone: Start - status: OK
 
-```bash
-yarn start
-```
+#Sign-flow
 
-This uses [npm-run-all](https://github.com/mysticatea/npm-run-all#readme) to run the functions dev server and app dev server concurrently.
+1. Phone: CheckSign - status: SIGN?
+1. Webb: Start - status: SIGN!
 
-### Option 2: Start each server individually
+2. Webb: Sign - status: SIGNED?
+2. Phone: Sign - status: SIGNED!
 
-**Run the functions dev server**
-
-From inside the project folder, run:
-
-```
-yarn start:lambda
-```
-
-This will open a local server running at `http://localhost:9000` serving your Lambda functions, updating as you make changes in the `src/lambda` folder.
-
-You can then access your functions directly at `http://localhost:9000/{function_name}`, but to access them with the app, you'll need to start the app dev server. Under the hood, this uses `react-scripts`' [advanced proxy feature](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#configuring-the-proxy-manually) with the `setupProxy.js` file.
-
-**Run the app dev server**
-
-While the functions server is still running, open a new terminal tab and run:
-
-```
-yarn start:app
-```
-
-This will start the normal create-react-app dev server and open your app at `http://localhost:3000`.
-
-Local in-app requests to the relative path `/.netlify/functions/*` will automatically be proxied to the local functions dev server.
-
-## Service Worker
-
-The service worker does not work with lambda functions out of the box. It prevents calling the function and returns the app itself instead ([Read more](https://github.com/facebook/create-react-app/issues/2237#issuecomment-302693219)). To solve this you have to eject and enhance the service worker configuration in the webpack config. Whitelist the path of your lambda function and you are good to go.
+3. Phone: Start - status: OK
+3. Webb: Receipt - status: OK

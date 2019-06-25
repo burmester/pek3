@@ -20,10 +20,10 @@ export default class RemoveUser extends React.Component {
             <p>Are you sure?</p>
           </div>
           <div className="d-flex justify-content-around">
-            <Button style={{ width: "100px" }} color="danger" onClick={e => {
+            <Button style={{ width: "100px" }} onClick={e => history.push('/phone')}>No</Button>
+            <Button outline style={{ width: "100px" }} color="danger" onClick={e => {
               this.context.deleteToken(() => history.push('/phone'))
             }}>Yes</Button>
-            <Button style={{ width: "100px" }} onClick={e => history.push('/phone')}>No</Button>
           </div>
         </div>
       </Fragment>)

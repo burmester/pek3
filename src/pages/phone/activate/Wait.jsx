@@ -12,7 +12,7 @@ export default class Wait extends React.Component {
   componentDidMount() {
     this.intervalID = setInterval(() => {
       this.context.getStatus((body) => {
-        if (body.status === "USERNAME") {
+        if (body.status === "SIGNED") {
           history.push("/phone/passcode")
         }
       })

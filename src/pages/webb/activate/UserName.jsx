@@ -7,13 +7,6 @@ import history from "../../../utils/history";
 export default class Start extends React.Component {
   static contextType = Context;
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      userName: undefined
-    };
-  }
-
   render() {
     return (
       <div className="centerdComponent text-center">
@@ -23,13 +16,12 @@ export default class Start extends React.Component {
             <Input
               type="text"
               placeholder="Username"
-              onChange={e => this.setState({ userName: e.target.value })}
             />
           </FormGroup>
         </Form>
         <Button
           onClick={e => {
-            this.context.setUserName(this.state.userName, () => history.push("/webb/activate/wait"))
+            history.push("/webb/activate/sign")
           }}
         >
           Next

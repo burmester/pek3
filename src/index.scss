@@ -16,6 +16,13 @@ body {
     }
 }
 
+pre {
+    border-radius: 5px;
+    background: #DDD;
+    padding: 10px;
+    margin: 0 -40px;
+}
+
 .btn {
     &.btn-primary {
         background: #005fa5;
