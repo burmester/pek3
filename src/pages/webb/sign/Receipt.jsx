@@ -7,22 +7,25 @@ import history from '../../../utils/history';
 export default class Start extends React.Component {
   static contextType = Context;
 
-  componentDidMount () {
+  componentDidMount() {
     this.context.setStatus("OK")
   }
 
   render() {
     return (
       <Fragment>
-        <div className="container">
-          <div className="centerdComponent text-center">
-            <h2>Confirmation</h2>
-            <p>
-              You have now sign:
-            </p>
+        <div className="container espresso">
+          <h1>
+            Confirmation
+      </h1>
+          <hr />
+          <p>Your transfer has been orderd.</p>
+          <Button onClick={e => history.push("/webb/transfer")} color="link">
+            Make another transfer
+        </Button>
+          <div style={{ marginTop: "20px" }} className="footer">
           </div>
-          <Button color="primary" block onClick={e => history.push('/webb')}>OK</Button>
         </div>
-      </Fragment>)
+      </Fragment >)
   }
 }
