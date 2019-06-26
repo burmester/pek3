@@ -2,9 +2,24 @@ import React, { Component } from "react";
 
 import Context from "./defaultContext";
 
+const generateToken = () => {
+  return (
+    Math.floor(Math.random() * 10).toString() +
+    Math.floor(Math.random() * 10).toString() +
+    Math.floor(Math.random() * 10).toString() +
+    Math.floor(Math.random() * 10).toString() +
+    Math.floor(Math.random() * 10).toString() +
+    Math.floor(Math.random() * 10).toString() +
+    Math.floor(Math.random() * 10).toString() +
+    Math.floor(Math.random() * 10).toString()
+  );
+};
+
 class GlobalState extends Component {
   state = {
-    data: undefined,
+    data: {
+      token: generateToken()
+    },
     loading: false,
     showMenu: false,
     transferData: false
@@ -18,27 +33,10 @@ class GlobalState extends Component {
           data: JSON.parse(data)
         }
       );
-    } else {
-      this.setState({
-        data: {
-          token: this.generateToken()
-        }
-      });
     }
   }
 
-  generateToken = () => {
-    return (
-      Math.floor(Math.random() * 10).toString() +
-      Math.floor(Math.random() * 10).toString() +
-      Math.floor(Math.random() * 10).toString() +
-      Math.floor(Math.random() * 10).toString() +
-      Math.floor(Math.random() * 10).toString() +
-      Math.floor(Math.random() * 10).toString() +
-      Math.floor(Math.random() * 10).toString() +
-      Math.floor(Math.random() * 10).toString()
-    );
-  };
+
 
   logOut = callback => {
     this.setState(
@@ -65,7 +63,7 @@ class GlobalState extends Component {
     this.setState(
       {
         data: {
-          token: this.generateToken()
+          token: generateToken()
         }
       },
       callback

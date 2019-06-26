@@ -11,6 +11,12 @@ export default class Start extends React.Component {
     return (
       <Container style={{ paddingTop: "30px" }}>
         <div className="container">
+          <Button color="primary"
+            outline
+            block
+            onClick={e => this.context.setStatus("SIGN", () => history.push("/webb/sign"))}>
+            Sign
+              </Button>
           <Button
             color="primary"
             outline

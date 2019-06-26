@@ -38,7 +38,7 @@ export default class Start extends React.Component {
             <FormGroup>
               <Input
                 type="text"
-                autocomplete="false" 
+                autoComplete="false" 
               />
             </FormGroup>
             <div className="footer">

@@ -66,7 +66,7 @@ export default class Code extends React.Component {
               <Label for="amount" xs={4}>Amount:</Label>
               <Col xs={8}>
                 <Input
-                  autocomplete="false"
+                  autoComplete="false"
                   id="amount"
                   type="number"
                   onChange={e => this.setState({ amount: e.target.value })}
@@ -79,7 +79,7 @@ export default class Code extends React.Component {
               <Label for="refrence" xs={4}>Refrence:</Label>
               <Col xs={8}>
                 <Input
-                  autocomplete="false"
+                  autoComplete="false"
                   id="refrence"
                   type="text"
                   onChange={e => this.setState({ refrence: e.target.value })}

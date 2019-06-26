@@ -8,13 +8,6 @@ export default class Start extends React.Component {
   static contextType = Context;
   intervalID = 0;
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      modal: true
-    };
-  }
-
   componentDidMount() {
     this.intervalID = setInterval(() => {
       this.context.getStatus((body) => {
@@ -62,18 +55,18 @@ export default class Start extends React.Component {
               Back
               </Button>
           </div>
-          <Modal isOpen={this.state.modal}>
+          <Modal isOpen={true}>
             <ModalHeader>Digital ID</ModalHeader>
             <ModalBody>
-              <div style={{textAlign: "center", padding:"30px 30px 20px"}}>
+              <div style={{ textAlign: "center", padding: "30px 30px 20px" }}>
                 <Spinner width="50px" image={"/spinner.png"} />
-                <p style={{paddingTop:"30px"}}>
+                <p style={{ paddingTop: "30px" }}>
                   Open your Digital ID on your mobile or tablet.
                 </p>
               </div>
             </ModalBody>
             <ModalFooter>
-              <Button color="secondary" onClick={e => history.goBack()}>Cancel</Button>
+              <Button color="secondary" onClick={e => this.context.setStatus("OK", () => history.goBack())}>Cancel</Button>
             </ModalFooter>
           </Modal>
         </div>

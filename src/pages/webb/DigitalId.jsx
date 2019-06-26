@@ -29,7 +29,7 @@ export default class Login extends React.Component {
           <Form>
             <FormGroup>
               <Label for="userName">Personal ID <span>6-35 digits</span></Label>
-              <form autocomplete="false" >
+              <form autoComplete="false" >
                 <Input
                   style={{ textAlign: "left" }}
                   id="userName"

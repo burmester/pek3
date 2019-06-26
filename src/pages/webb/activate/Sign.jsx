@@ -1,11 +1,19 @@
 import React, { Fragment } from "react";
-import { Button } from "reactstrap";
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+
 
 import Context from "../../../context/defaultContext";
 import history from "../../../utils/history";
 
 export default class Start extends React.Component {
   static contextType = Context;
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      showModal: false,
+    };
+  }
 
   getDate = () => {
     const current_datetime = new Date()
@@ -35,15 +43,30 @@ export default class Start extends React.Component {
             <Button onClick={e => history.goBack()} color="secondary">
               Back
           </Button>
-            <Button onClick={e => {
-              e.preventDefault()
-              this.context.signOK(() => history.push("/webb/activate/qr"))
-            }}
+            <Button onClick={e => this.setState({showModal: true})}
               color="secondary">
               Sign
           </Button>
           </div>
         </div>
+        <Modal isOpen={this.state.showModal}>
+          <ModalHeader>Digital ID</ModalHeader>
+          <ModalBody>
+            <div style={{ textAlign: "center", padding: "30px 30px 20px" }}>
+              <h2>Sign using your card reader with cable.</h2>
+              <Button onClick={e => {
+              this.context.signOK(() => history.push("/webb/activate/qr"))
+            }}
+            style={{marginTop:"20px"}}
+              color="primary">
+              Sign
+          </Button>
+            </div>
+          </ModalBody>
+          <ModalFooter>
+            <Button color="secondary" onClick={e => this.setState({showModal: false})}>Cancel</Button>
+          </ModalFooter>
+        </Modal>
       </Fragment >
     );
   }

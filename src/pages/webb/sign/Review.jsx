@@ -33,7 +33,7 @@ export default class Code extends React.Component {
             <Col xs={9}>{this.context.transferData.refrence}</Col>
           </Row>
             <div className="footer" style={{marginTop:"20px"}}>
-              <Button color="secondary" onClick={e => history.push("/webb/sign")}>
+              <Button color="secondary" onClick={e => this.context.setStatus("SIGN", () => history.push("/webb/sign"))}>
                 Sign
               </Button>
               <Button color="secondary" onClick={e => history.goBack()}>

@@ -10,13 +10,13 @@ export default class Code extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      token: false
+      token: ""
     };
   }
 
   onSubmit = (e) => {
     e.preventDefault()
-    this.context.setToken(this.state.token, () =>
+    this.context.setToken(this.state.token.replace(/\s/g, ''), () =>
       history.push("/webb/activate/userName")
     )
   }
@@ -47,10 +47,18 @@ export default class Code extends React.Component {
               <Input
                 type="tel"
                 placeholder="Activation code"
-                onChange={e => this.setState({ token: e.target.value })}
-                pattern="[0-9]*"
+                value={this.state.token}
+                onChange={e => {
+                  const value = e.target.value.replace(/\s/g, '');
+                  if (value.length%4 === 0) {
+                    this.setState({ token: e.target.value + " " })
+                  } else {
+                    this.setState({ token: e.target.value })
+                  }
+
+                }}
                 inputMode="numeric"
-                autocomplete="false" 
+                autoComplete="false"
               />
             </FormGroup>
             <div className="footer">
