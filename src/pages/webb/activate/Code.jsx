@@ -50,6 +50,7 @@ export default class Code extends React.Component {
                 onChange={e => this.setState({ token: e.target.value })}
                 pattern="[0-9]*"
                 inputMode="numeric"
+                autocomplete="false" 
               />
             </FormGroup>
             <div className="footer">

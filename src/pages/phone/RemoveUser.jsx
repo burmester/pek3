@@ -11,10 +11,11 @@ export default class RemoveUser extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    this.context.deleteToken(() => {
-      alert("Your profile has been removed")
-      history.push('/phone')
-    })
+    if (window.confirm("Your profile will be removed, are you sure?")) {
+      this.context.deleteToken(() => {
+        history.push('/phone')
+      })
+    }
   }
 
   render() {
@@ -24,21 +25,21 @@ export default class RemoveUser extends React.Component {
         <div className="container">
           <div className="centerdComponent text-center">
             <h2>Remove your profile</h2>
-            <p>To remove your profile enter you passcode and press OK.</p>
+            <p>Your profile will be remove and you will have to activate again on Online Banking with card reader with cable.</p>
           </div>
-          <Form>
+          <Form className="d-none">
             <FormGroup>
-            <input
-                  className="form-control disc"
-                  type="number"
-                  pattern="[0-9]*"
-                  placeholder="Passcode"
-                  inputmode="numeric"
-                  autofocus />
+              <input
+                className="form-control disc"
+                type="number"
+                pattern="[0-9]*"
+                placeholder="Passcode"
+                inputmode="numeric"
+                autofocus />
             </FormGroup>
           </Form>
           <Button color="danger" block onClick={this.onSubmit.bind(this)}>
-              Delete
+            Remove
             </Button>
         </div>
       </Fragment>)

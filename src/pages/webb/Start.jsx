@@ -13,75 +13,44 @@ export default class Start extends React.Component {
         <Container style={{ paddingTop: "30px" }}>
           <div className="container">
             <div className="centerdComponent text-center">
-              <h2>You are now logged.</h2>
+              <h2>You have logged in succesful!</h2>
             </div>
-            <Button
-              outline
-              block
-              color="primary"
-              onClick={e => {
-                this.context.setStatus("SIGN", () => {
-                  history.push("/webb/sign")
-                })
-              }}
-            >
-              Sign with Digital ID
-            </Button>
-            <Button
-              block
-              outline
-              onClick={e => {
-                this.context.logOut(() => history.push("/webb"))
-              }}
-            >
-              Log out
-            </Button>
           </div>
         </Container>
       );
     } else if (this.context.data && this.context.data.status === "LOGOUT") {
       return (
-        <Container style={{ paddingTop: "30px" }}>          <div className="container">
-          <div className="centerdComponent text-center">
-            <h2>You are not inlogged.</h2>
+        <Container style={{ paddingTop: "30px" }}>
+          <div className="container">
+            <div className="centerdComponent text-center">
+              <h2>You have logged out.</h2>
+            </div>
           </div>
-          <Button
-            color="primary"
-            block
-            onClick={e => {
-              this.context.setStatus("LOGIN", () => {
-                history.push("/webb/login")
-              })
-            }}>Login with Digital ID</Button>
-          <Button
-            color="danger"
-            block
-            outline
-            onClick={e => this.context.removeData(() => history.push("/webb"))}
-          >
-            Remove Digital ID
-          </Button>
-        </div>
         </Container>
       )
     } else {
       return (
-        <Container style={{ paddingTop: "30px" }}>          <div className="container">
-          <Button
-            color="primary"
-            block
-            onClick={e => history.push("/webb/activate")}
-          >
-            Activate Digital ID
+        <Container style={{ paddingTop: "30px" }}>
+          <div className="container">
+            <div className="centerdComponent text-center">
+              <h2>No Digital ID is activated.</h2>
+            </div>
+            <Button
+              color="primary"
+              outline
+              block
+              onClick={e => history.push("/webb/activate")}
+            >
+              Activate Digital ID
           </Button>
-          <Button
-            color="danger" outline
-            block
-            onClick={e => this.context.removeData(() => history.push("/webb"))}
-          >
-            Remove Digital ID
+            <Button
+              color="danger" outline
+              block
+              onClick={e => this.context.removeData(() => history.push("/webb"))}
+            >
+              Remove Digital ID
           </Button>
-        </div>
+          </div>
         </Container>
       )
     }

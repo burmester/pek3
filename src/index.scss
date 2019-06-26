@@ -34,9 +34,11 @@ input.disc {
 .btn.athenaBack.own {
     background: #f1f1f1;
     color: #005fa5;
-    margin-top: 20px;
     border: none;
     border-radius: 0;
+    padding: 9px;
+    margin: 20px -33px;
+    width: 576px;
 }
 
 .btn {
@@ -153,15 +155,13 @@ input.form-control {
 }
 
 .logon {
-    padding: 0 10px;
-
     >div {
         height: 95px;
         display: flex;
         padding: 0 10px 0 30px;
-        border: 1px solid #CCC;
+        border-bottom: 1px solid #CCC;
 
-        &:not(:last-child) {
+        &:last-child {
             border-bottom: none;
         }
 

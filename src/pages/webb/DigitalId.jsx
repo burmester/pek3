@@ -23,18 +23,21 @@ export default class Login extends React.Component {
         </div>
         <div className="container">
           <div className="centerdComponent text-center"
-          style={{marginTop:"0"}}>
+            style={{ marginTop: "0" }}>
             <h2>Digital ID</h2>
           </div>
           <Form>
             <FormGroup>
               <Label for="userName">Personal ID <span>6-35 digits</span></Label>
-              <Input
-                style={{textAlign:"left"}}
-                id="userName"
-                autoFocus />
+              <form autocomplete="false" >
+                <Input
+                  style={{ textAlign: "left" }}
+                  id="userName"
+                  autoFocus
+                  />
+              </form>
             </FormGroup>
-            <FormGroup check style={{marginBottom:"20px", marginTop:"-10px"}}>
+            <FormGroup check style={{ marginBottom: "20px", marginTop: "-10px" }}>
               <Label check>
                 <Input type="checkbox" /> Save my Personal ID
               </Label>
@@ -44,8 +47,8 @@ export default class Login extends React.Component {
             </Button>
           </Form>
           <Button block onClick={e => history.goBack()}
-          className="athenaBack own">
-             Select a different log in method
+            className="athenaBack own">
+            Select a different log in method
             </Button>
         </div>
       </Fragment>

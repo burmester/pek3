@@ -18,6 +18,7 @@ import ReceiptSign from "./webb/sign/Receipt";
 import Start from "./webb/Start";
 import Transfer from "./webb/sign/Transfer";
 import Review from "./webb/sign/Review";
+import Admin from "./webb/Admin";
 
 
 
@@ -43,6 +44,7 @@ export default class extends React.Component {
           <Route exact path="/webb/review" component={Review} />
           <Route exact path="/webb/sign" component={Sign} />
           <Route exact path="/webb/sign/receipt" component={ReceiptSign} />
+          <Route exact path="/webb/admin" component={Admin} />
         </Switch>
       </Fragment>
     );

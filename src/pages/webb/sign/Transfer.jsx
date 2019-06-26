@@ -36,7 +36,7 @@ export default class Code extends React.Component {
             <FormGroup row>
               <Label for="fromAccount" xs={4}>From account:</Label>
               <Col xs={8}>
-                <Input type="select" name="select" id="fromAccount" 
+                <Input type="select" name="select" id="fromAccount"
                   onChange={e => this.setState({ fromAccount: e.target.value })}
                 >
                   <option>Select a account</option>
@@ -66,6 +66,7 @@ export default class Code extends React.Component {
               <Label for="amount" xs={4}>Amount:</Label>
               <Col xs={8}>
                 <Input
+                  autocomplete="false"
                   id="amount"
                   type="number"
                   onChange={e => this.setState({ amount: e.target.value })}
@@ -78,6 +79,7 @@ export default class Code extends React.Component {
               <Label for="refrence" xs={4}>Refrence:</Label>
               <Col xs={8}>
                 <Input
+                  autocomplete="false"
                   id="refrence"
                   type="text"
                   onChange={e => this.setState({ refrence: e.target.value })}
