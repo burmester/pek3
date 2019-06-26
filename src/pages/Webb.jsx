@@ -10,6 +10,7 @@ import UserName from "./webb/activate/UserName";
 import SignActivation from "./webb/activate/Sign";
 import Wait from "./webb/activate/Wait";
 import Receipt from "./webb/activate/Receipt";
+import DigitalID from "./webb/DigitalId";
 import Login from "./webb/Login";
 import LoginQR from "./webb/LoginQr";
 import Sign from "./webb/sign/Sign";
@@ -29,6 +30,7 @@ export default class extends React.Component {
         <Switch>
           <Route exact path="/webb" component={Start} />
           <Route exact path="/webb/login" component={Login} />
+          <Route exact path="/webb/login/digtalId" component={DigitalID} />
           <Route exact path="/webb/login/qr" component={LoginQR} />
           <Route exact path="/webb/activate" component={Activate} />
           <Route exact path="/webb/activate/code" component={Code} />
