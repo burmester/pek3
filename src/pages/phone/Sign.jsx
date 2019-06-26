@@ -75,7 +75,6 @@ export default class Passcode extends React.Component {
     return (
       <div className="centerdComponent text-center" style={{ marginTop: "30px" }}>
         <Spinner width="50px" image={"/spinner.png"} />
-        <h2 style={{ marginTop: "30px" }}>Wait</h2>
       </div>
     )
   }
