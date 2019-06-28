@@ -33,8 +33,8 @@ export default class Passcode extends React.Component {
                   type="number"
                   pattern="[0-9]*"
                   placeholder="Passcode"
-                  inputmode="numeric"
-                  autofocus />
+                  inputMode="numeric"
+                  autoFocus />
               </FormGroup>
               <Button color="primary" block type="submit">
                 Login
@@ -61,8 +61,8 @@ export default class Passcode extends React.Component {
                   type="number"
                   pattern="[0-9]*"
                   placeholder="Passcode"
-                  inputmode="numeric"
-                  autofocus />
+                  inputMode="numeric"
+                  autoFocus />
               </FormGroup>
               <Button color="primary" block type="submit">
                 Sign

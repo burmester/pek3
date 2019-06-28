@@ -15,6 +15,9 @@ import RemoveUser from "./phone/RemoveUser";
 import Contact from "./phone/Contact";
 import About from "./phone/About";
 import Sign from "./phone/Sign";
+import ChangePasscode from "./phone/ChangePasscode";
+
+
 
 
 export default class extends React.Component {
@@ -35,6 +38,7 @@ export default class extends React.Component {
           <Route path="/phone/login" component={Login} />
           <Route path="/phone/checkSign" component={CheckSign} />
           <Route path="/phone/sign" component={Sign} />
+          <Route path="/phone/changePasscode" component={ChangePasscode} />
         </Switch>
         <Footer />
       </Fragment>

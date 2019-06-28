@@ -27,7 +27,7 @@ export default class Start extends React.Component {
       <Fragment>
         <div className="container espresso">
           <h1>
-            Sign
+          Approve
           </h1>
           <hr />
           <p>Before you make this payment please check the below details carefully.</p>
@@ -49,14 +49,14 @@ export default class Start extends React.Component {
           </Row>
           <div className="footer" style={{ marginTop: "20px" }}>
             <Button color="secondary">
-              Sign
+            Approve
               </Button>
             <Button color="secondary" >
               Back
               </Button>
           </div>
           <Modal isOpen={true}>
-            <ModalHeader>Digital ID</ModalHeader>
+            <ModalHeader>Sign with Digital ID</ModalHeader>
             <ModalBody>
               <div style={{ textAlign: "center", padding: "30px 30px 20px" }}>
                 <Spinner width="50px" image={"/spinner.png"} />

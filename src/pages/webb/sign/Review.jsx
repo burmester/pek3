@@ -12,7 +12,7 @@ export default class Code extends React.Component {
       <Fragment>
         <div className="container espresso">
           <h1>
-            Sign
+            Approve
           </h1>
           <hr />
           <p>Before you make this payment please check the below details carefully.</p>
@@ -34,7 +34,7 @@ export default class Code extends React.Component {
           </Row>
             <div className="footer" style={{marginTop:"20px"}}>
               <Button color="secondary" onClick={e => this.context.setStatus("SIGN", () => history.push("/webb/sign"))}>
-                Sign
+                Approve
               </Button>
               <Button color="secondary" onClick={e => history.goBack()}>
                 Back

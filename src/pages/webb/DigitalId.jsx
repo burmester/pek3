@@ -29,13 +29,11 @@ export default class Login extends React.Component {
           <Form>
             <FormGroup>
               <Label for="userName">Personal ID <span>6-35 digits</span></Label>
-              <form autoComplete="false" >
                 <Input
                   style={{ textAlign: "left" }}
                   id="userName"
                   autoFocus
                   />
-              </form>
             </FormGroup>
             <FormGroup check style={{ marginBottom: "20px", marginTop: "-10px" }}>
               <Label check>

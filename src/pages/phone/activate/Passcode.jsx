@@ -84,12 +84,12 @@ export default class Passcode extends React.Component {
                   className="form-control disc"
                   type="number"
                   pattern="[0-9]*"
-                  inputmode="numeric"
+                  inputMode="numeric"
                   placeholder="Repeat passcode"
                   onChange={this.passcodeChange}
                   value={this.state.passcode}
-                  invalid={this.state.invalideCode}
-                  autofocus
+                  invalid={this.state.invalideCode.toString()}
+                  autoFocus
                    />
             </FormGroup>
             <FormGroup>
@@ -97,9 +97,9 @@ export default class Passcode extends React.Component {
                   className="form-control disc"
                   type="number"
                   pattern="[0-9]*"
-                  inputmode="numeric"
+                  inputMode="numeric"
                   placeholder="Repeat passcode"
-                  invalid={this.state.noSameCode}
+                  invalid={this.state.noSameCode.toString()}
                   onChange={this.repeatPasscodeChange}
                    />
             </FormGroup>
