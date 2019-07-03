@@ -25,7 +25,7 @@ class Header extends Component {
               fontSize: "18px"
             }}
           >
-            Handelsbanken
+            {this.props.heading || "Handelsbanken"}
           </div>
           {this.props.onCancel && (
             <Button

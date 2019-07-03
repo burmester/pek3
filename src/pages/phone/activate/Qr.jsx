@@ -38,7 +38,7 @@ export default class Qr extends React.Component {
     if (this.state.error) {
       return (
         <Fragment>
-          <Header showMenu={false} cancelText="Back" onCancel={() => history.push("/phone/code")} />
+          <Header showMenu={false} cancelText="Back" onCancel={() => history.push("/phone/code")} heading={"Activate Digital Id"} />
           <div className="centerdComponent text-center">
             <h2>{this.state.error}</h2>
             <p>You need to allow the camera</p>
@@ -64,7 +64,7 @@ export default class Qr extends React.Component {
 
     return (
       <Fragment>
-        <Header showMenu={false} cancelText="Back" onCancel={() => history.push("/phone/code")} />
+        <Header showMenu={false} cancelText="Back" onCancel={() => history.push("/phone/code")} heading={"Activate Digital Id"} />
         <div>
           <QrReader
             delay={this.state.delay}

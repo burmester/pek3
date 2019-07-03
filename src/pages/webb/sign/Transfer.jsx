@@ -88,7 +88,7 @@ export default class Code extends React.Component {
             </FormGroup>
             <div className="footer">
               <Button type="submit" color="secondary">
-                Ok
+                OK
               </Button>
             </div>
 

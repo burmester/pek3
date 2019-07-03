@@ -42,7 +42,7 @@ export default class Start extends React.Component {
             block
             onClick={e => history.push("/webb/activate")}
           >
-            Activate Digital ID
+            Activate Digital Id
           </Button>
           <Button
             color="danger"
@@ -50,7 +50,7 @@ export default class Start extends React.Component {
             block
             onClick={e => this.context.removeData(() => history.push("/webb"))}
           >
-            Remove Digital ID
+            Remove Digital Id
           </Button>
         </div>
       </Container>

@@ -12,16 +12,16 @@ export default class Start extends React.Component {
       <Fragment>
         <div className="container espresso">
           <h1>
-          Activate Digital ID
+          Activate Digital Id
           </h1>
           <hr />
-          <h3>Activate your Digital ID app</h3>
+          <h3>Activate your Digital Id app</h3>
           <p>
-            A one off activation is required for every device. To start the activation process you will need to logged in with your logon card, card reader and cable.
+            A one-off activation is required for every device. To start the activation process you will need to logged in with your log-on card, card reader and cable.
           </p>
           <ol>
             <li>
-              Download Handelsbanken Digital ID from App Store or Google Play onto the device you wish to activate.
+              Download Handelsbanken Digital Id from App Store or Google Play onto the device you wish to activate.
               </li>
             <li>
               Start the activation process by clicking the link below.

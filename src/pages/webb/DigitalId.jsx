@@ -24,7 +24,7 @@ export default class Login extends React.Component {
         <div className="container">
           <div className="centerdComponent text-center"
             style={{ marginTop: "0" }}>
-            <h2>Digital ID</h2>
+            <h2>Digital Id</h2>
           </div>
           <Form>
             <FormGroup>
@@ -32,7 +32,6 @@ export default class Login extends React.Component {
                 <Input
                   style={{ textAlign: "left" }}
                   id="userName"
-                  autoFocus
                   />
             </FormGroup>
             <FormGroup check style={{ marginBottom: "20px", marginTop: "-10px" }}>

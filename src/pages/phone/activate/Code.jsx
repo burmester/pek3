@@ -14,7 +14,7 @@ export default class Code extends React.Component {
 
     return (
       <Fragment>
-        <Header showMenu={false} onCancel={() => history.push("/phone")}/>
+        <Header showMenu={false} onCancel={() => history.push("/phone")} heading={"Activate Digital Id"}/>
         <div className="hero d-flex align-items-center justify-content-center">
           <i
             className="material-icons"
@@ -30,8 +30,7 @@ export default class Code extends React.Component {
           <div className="centerdComponent text-center">
             <h2>Activation code</h2>
             <p>
-              Enter this activation code in Online Banking to start the
-              activation.
+              Enter this activation code in the 'Activate Digital Id' screen in Idividual Online Banking to start
             </p>
           </div>
           <div className="centerdComponent text-center">
@@ -43,12 +42,6 @@ export default class Code extends React.Component {
             >
               {token.substring(0, 4)} {token.substring(4, 8)}
             </div>
-          </div>
-          <div className="centerdComponent text-center d-none">
-            <p>
-              Then wait until the internet serice ask you to open the QR
-              scanner.
-            </p>
           </div>
           <Button
             color="primary"

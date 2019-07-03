@@ -31,11 +31,11 @@ export default class Wait extends React.Component {
       <Fragment>
         <div className="container espresso">
           <h1>
-            Activate Digital ID
+            Activate Digital Id
             </h1>
           <hr />
           <h3>Choose passcode</h3>
-          <p>Please choose a 6 digit passcode in the app anc click <b>Confirm</b></p>
+          <p>Please choose a 6 digit passcode in the app and click <b>Confirm</b></p>
           <p>It is important that you keep your passcode secret and you should try not to use a number other people could guess.</p>
           <div className="spinnerContainer">
             <Spinner width="50px" image={"/spinner.png"} />

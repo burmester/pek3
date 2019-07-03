@@ -56,12 +56,12 @@ export default class Start extends React.Component {
               </Button>
           </div>
           <Modal isOpen={true}>
-            <ModalHeader>Sign with Digital ID</ModalHeader>
+            <ModalHeader>Sign with Digital Id</ModalHeader>
             <ModalBody>
               <div style={{ textAlign: "center", padding: "30px 30px 20px" }}>
                 <Spinner width="50px" image={"/spinner.png"} />
                 <p style={{ paddingTop: "30px" }}>
-                  Open your Digital ID on your mobile or tablet.
+                  Open your Digital Id on your mobile or tablet.
                 </p>
               </div>
             </ModalBody>

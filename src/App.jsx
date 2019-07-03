@@ -7,8 +7,17 @@ import Start from './pages/Start';
 import Webb from './pages/Webb';
 import Phone from './pages/Phone';
 
+history.listen(location => {
+    if (location.pathname.includes("phone")) {
+        document.body.className = "phone"
+    } else {
+        document.body.className = ""
+    }
+});
+
 
 export default class App extends Component {
+
     render() {
         return (
             <GlobalState>

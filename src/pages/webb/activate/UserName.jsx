@@ -12,12 +12,12 @@ export default class Start extends React.Component {
       <Fragment>
         <div className="container espresso">
           <h1>
-            Activate Digital ID
+            Activate Digital Id
         </h1>
           <hr />
           <h3>Personal ID</h3>
           <p>
-            You will use your Personal ID to identify yourself when you login using the Digital ID app. It is also used to login to the indvidual Banking app.
+            You will use your Personal ID to identify yourself when you login using the Digital Id app. It is also used to log in to the Idividual Mobile Banking app and be used with Card Reader.
           </p>
           <ul>
             <li>
@@ -31,6 +31,7 @@ export default class Start extends React.Component {
           </li>
           </ul>
           <h3>Personal ID<span>8-35 digits</span></h3>
+          <p style={{color: "#777"}}>(If you already have a Personal ID this is shown below)</p>
           <Form onSubmit={e => {
             e.preventDefault()
             history.push("/webb/activate/sign")

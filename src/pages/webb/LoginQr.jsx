@@ -41,8 +41,8 @@ export default class LoginQr extends React.Component {
         <div className="container">
           <div className="centerdComponent text-center"
             style={{ marginTop: "0", marginBottom: "20px" }}>
-            <h2>Digital ID</h2>
-            <p><b>Open the Digital ID app.</b><br />Choose <i>log in</i> and scan the QR code on the screen.</p>
+            <h2>Digital Id</h2>
+            <p><b>Open the Digital Id app.</b><br />Choose <i>log in</i> and scan the QR code on the screen.</p>
             <QRCode value="login" />
           </div>
           <Button color="primary" block onClick={e => history.goBack()}>

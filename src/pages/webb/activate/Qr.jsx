@@ -29,13 +29,13 @@ export default class Start extends React.Component {
         <Fragment>
           <div className="container espresso">
             <h1>
-              Activate Digital ID
+              Activate Digital Id
             </h1>
             <hr />
             <h3>Scan QR code</h3>
             <ul>
               <li>
-                Open QR scanner in the security app.
+                Open QR scanner in the Digtal Id app.
               </li>
               <li>
                 Point the camera at the QR code shown on the screen.

@@ -34,7 +34,7 @@ export default class Login extends React.Component {
     if (this.state.error) {
       return (
         <Fragment>
-          <Header cancelText="Back" showMenu={false} onCancel={() => history.push("/phone")} />
+          <Header cancelText="Back" showMenu={false} onCancel={() => history.push("/phone")} heading="Log in"/>
           <div className="centerdComponent text-center">
             <h2>{this.state.error}</h2>
             <Button onClick={e => this.context.setStatus("LOGIN", () => history.push("/phone/sign"))}>
@@ -55,7 +55,7 @@ export default class Login extends React.Component {
 
     return (
       <Fragment>
-        <Header cancelText="Back" showMenu={false} onCancel={() => history.push("/phone")} />
+        <Header cancelText="Back" showMenu={false} onCancel={() => history.push("/phone")} heading="Log in"/>
         <div>
           <QrReader
             delay={this.state.delay}

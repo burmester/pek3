@@ -13,7 +13,7 @@ export default class Receipt extends React.Component {
   render() {
     return (
       <Fragment>
-        <Header showMenu={false} />
+        <Header showMenu={false} heading={"Receipt"}/>
         <div className="hero d-flex align-items-center justify-content-center">
           <i className="material-icons"
             style={{
@@ -28,7 +28,7 @@ export default class Receipt extends React.Component {
           <div className="centerdComponent text-center">
             <h2>Confirmation</h2>
             <p>
-              Your security app is now ready to use.
+              You have successfully activated Digital Id. Your app is now ready to use.
             </p>
           </div>
           <Button color="primary" block onClick={e => history.push('/phone')}>OK</Button>

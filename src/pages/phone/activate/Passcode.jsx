@@ -58,13 +58,13 @@ export default class Passcode extends React.Component {
   render() {
     return (
       <Fragment>
-        <Header showMenu={false} onCancel={() => history.push("/phone")} />
+        <Header showMenu={false} onCancel={() => history.push("/phone")} heading={"Choose passcode"} />
         <div className="hero d-flex align-items-center justify-content-center">
           <i className="material-icons">lock_outline</i>
         </div>
         <div className="container">
           <div className="centerdComponent text-center">
-            <h2>Choose your passcode</h2>
+            <h2>Choose your passcode for Digital Id.</h2>
             Number of characters: 6
             <br />
             Valid characters: 0-9 (digits)
@@ -74,9 +74,7 @@ export default class Passcode extends React.Component {
             <br />
             Six identical digits (111111)
             <br />
-            Sequences starting or ending with 1 (123456, 654321)
-            <br />
-            Palindrome (123321, 154451)
+            Sequences/series (123456, 654321, 345678, 890123)
           </div>
           <Form onSubmit={this.onSubmit.bind(this)}>
             <FormGroup>
@@ -89,7 +87,6 @@ export default class Passcode extends React.Component {
                   onChange={this.passcodeChange}
                   value={this.state.passcode}
                   invalid={this.state.invalideCode.toString()}
-                  autoFocus
                    />
             </FormGroup>
             <FormGroup>
@@ -109,10 +106,10 @@ export default class Passcode extends React.Component {
               visibility: this.state.error ? "" : "hidden"
             }}
           >
-            You need to enter a correct passcode.
+            Your passcode do not meet the requirements. Please try again.
           </p>
           <Button color="primary" block type="submit">
-            Continue
+            OK
           </Button>
           </Form>
         </div>

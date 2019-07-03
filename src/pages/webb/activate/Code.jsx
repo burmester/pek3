@@ -26,13 +26,13 @@ export default class Code extends React.Component {
       <Fragment>
         <div className="container espresso">
           <h1>
-            Activate Digital ID
+            Activate Digital Id
           </h1>
           <hr />
           <h3>Activation code</h3>
           <ol>
             <li>
-              Open the Digital ID app and press <b>Get started</b>.
+              Open the Digital Id app and press <b>Start activation</b>.
             </li>
             <li>
               An activation code will be displayed in the app. Please enter this below.

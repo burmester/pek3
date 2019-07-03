@@ -41,7 +41,7 @@ class Footer extends Component {
           <div onClick={() => {
             this.context.toggleMenu()
             history.push("/phone/about")
-          }}>About Digital ID</div>
+          }}>About Digital Id</div>
         </div>
       </BottomSheet>
     );

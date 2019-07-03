@@ -28,7 +28,7 @@ export default class CheckSign extends React.Component {
         <Header showMenu={false} onCancel={() => history.push("/phone")} />
         <div className="centerdComponent text-center" style={{ marginTop: "30px" }}>
           <Spinner width="50px" image={"/spinner.png"} />
-          <h2 style={{ marginTop: "30px" }}>Looking for something to sign.</h2>
+          <h2 style={{ marginTop: "30px" }}>Waiting for something to sign.</h2>
         </div>
       </Fragment>
     );

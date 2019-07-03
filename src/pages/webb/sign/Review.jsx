@@ -25,7 +25,7 @@ export default class Code extends React.Component {
             <Col xs={9}>{this.context.transferData.beneficiary}</Col>
           </Row>
           <Row>
-            <Col xs={3}>Amountt</Col>
+            <Col xs={3}>Amount</Col>
             <Col xs={9}>{this.context.transferData.amount}</Col>
           </Row>
           <Row>

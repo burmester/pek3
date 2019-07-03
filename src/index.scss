@@ -3,7 +3,10 @@ html {
 }
 
 body {
-    // background-color: #fbfaf9 !important;
+    &.phone {
+        background-color: #fbfaf9 !important;
+    }
+
     height: 100%;
 
     h2 {
@@ -39,6 +42,36 @@ input.disc {
     padding: 9px;
     margin: 20px -33px;
     width: 576px;
+}
+
+.groupHeading {
+    background: #e1f0f5;
+    color: #005b9a;
+    padding: 5px 10px;
+    font-weight: 600;
+
+    >span {
+        font-weight: 300;
+        font-size: 14px;
+    }
+
+    margin-top: 20px;
+}
+
+.listItem {
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    background: #FFF;
+    border-bottom: 1px solid #CCC;
+
+    >.material-icons {
+        padding-right: 5px;
+    }
+
+    >div {
+        line-height: 20px;
+    }
 }
 
 .btn {
@@ -213,6 +246,10 @@ input.form-control {
             font-size: 14px;
             padding-left: 10px;
         }
+    }
+
+    p {
+        margin: 5px;
     }
 
     hr {

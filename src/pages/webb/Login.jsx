@@ -23,7 +23,7 @@ export default class DigitalId extends React.Component {
           </i>
           </div>
           <div>
-            <h3>Digital ID</h3>
+            <h3>Digital Id</h3>
           </div>
         </div>
         <div>

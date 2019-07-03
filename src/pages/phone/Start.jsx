@@ -43,9 +43,9 @@ export default class Start extends React.Component {
         <div className="container">
           <div className="centerdComponent text-center">
             <h2>Get started now</h2>
-            <p>You need to login to the Online Banking with your card reader with cable.</p>
+            <p>You need to login to the Individual Online Banking with your card reader with cable.</p>
           </div>
-          <Button color="primary" block onClick={e => history.push('/phone/code')}>Get started</Button>
+          <Button color="primary" block onClick={e => history.push('/phone/code')}>Start activation</Button>
         </div>
       </Fragment>)
   }

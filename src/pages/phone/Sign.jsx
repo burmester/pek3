@@ -22,19 +22,19 @@ export default class Passcode extends React.Component {
     if (this.context.data && this.context.data.status === "LOGIN") {
       return (
         <Fragment>
+          <Header showMenu={false} onCancel={() => this.context.setStatus("OK", () => history.push("/phone"))} heading="Log in" />
           <div className="container">
             <div className="topContainer">
               I identify myself at: <span>Handelsbanken</span>
             </div>
             <Form onSubmit={this.onSubmit.bind(this)}>
               <FormGroup>
-              <input
+                <input
                   className="form-control disc"
                   type="number"
                   pattern="[0-9]*"
                   placeholder="Passcode"
-                  inputMode="numeric"
-                  autoFocus />
+                  inputMode="numeric" />
               </FormGroup>
               <Button color="primary" block type="submit">
                 Login
@@ -47,12 +47,19 @@ export default class Passcode extends React.Component {
     if (this.context.data && this.context.data.status === "SIGN") {
       return (
         <Fragment>
+          <Header showMenu={false} onCancel={() => this.context.setStatus("OK", () => history.push("/phone"))} heading="Sign" />
           <div className="container">
             <div className="topContainer">
-              I identify myself at: <span>Handelsbanken</span>
+              I am sgining at: <span>Handelsbanken</span>
             </div>
             <div className="data">
-              &lt;Transactional information&gt;
+              From account: 1111111 * Current Account * GBP 5,323.83
+              <br/>
+              Beneficiary: Brian * 20-00-00 * 12345678 * db
+              <br />
+              Amount: GBP 50.00
+              <br/>
+              Refrence: Woodworks
             </div>
             <Form onSubmit={this.onSubmit.bind(this)}>
               <FormGroup>
@@ -61,8 +68,7 @@ export default class Passcode extends React.Component {
                   type="number"
                   pattern="[0-9]*"
                   placeholder="Passcode"
-                  inputMode="numeric"
-                  autoFocus />
+                  inputMode="numeric" />
               </FormGroup>
               <Button color="primary" block type="submit">
                 Sign
@@ -82,7 +88,6 @@ export default class Passcode extends React.Component {
   render() {
     return (
       <Fragment>
-        <Header showMenu={false} onCancel={() => history.push("/phone")} />
         {this.renderSignText()}
       </Fragment>
     );

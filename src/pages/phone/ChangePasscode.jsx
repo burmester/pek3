@@ -26,7 +26,7 @@ export default class Passcode extends React.Component {
     if (this.state.showRecipte) {
       return (
         <Fragment>
-          <Header showMenu={false} />
+          <Header showMenu={false} heading="Receipt"/>
           <div className="hero d-flex align-items-center justify-content-center">
             <i className="material-icons"
               style={{
@@ -51,25 +51,23 @@ export default class Passcode extends React.Component {
 
       return (
         <Fragment>
-          <Header showMenu={false} onCancel={() => history.push("/phone")} />
+          <Header showMenu={false} onCancel={() => history.push("/phone")} heading="Change your passcode"/>
           <div className="hero d-flex align-items-center justify-content-center">
             <i className="material-icons">lock_outline</i>
           </div>
           <div className="container">
             <div className="centerdComponent text-center">
-              <h2>Change your passcode</h2>
-              Number of characters: 6
+            <h2>Change your passcode for Digital Id.</h2>
+            Number of characters: 6
             <br />
-              Valid characters: 0-9 (digits)
+            Valid characters: 0-9 (digits)
             <br />
-              <br />
-              Not allowed:
             <br />
-              Six identical digits (111111)
+            Not allowed:
             <br />
-              Sequences starting or ending with 1 (123456, 654321)
+            Six identical digits (111111)
             <br />
-              Palindrome (123321, 154451)
+            Sequences/series (123456, 654321, 345678, 890123)
           </div>
             <Form onSubmit={this.onSubmit.bind(this)}>
               <FormGroup>
@@ -79,7 +77,6 @@ export default class Passcode extends React.Component {
                   pattern="[0-9]*"
                   inputMode="numeric"
                   placeholder="Current passcode"
-                  autoFocus
                 />
               </FormGroup>
               <FormGroup>
@@ -101,7 +98,7 @@ export default class Passcode extends React.Component {
                 />
               </FormGroup>
               <Button color="primary" block type="submit">
-                Continue
+                Confirm
           </Button>
             </Form>
           </div>

@@ -33,7 +33,7 @@ export default class Start extends React.Component {
         <Container style={{ paddingTop: "30px" }}>
           <div className="container">
             <div className="centerdComponent text-center">
-              <h2>No Digital ID is activated.</h2>
+              <h2>No Digital Id is activated.</h2>
             </div>
             <Button
               color="primary"
@@ -41,14 +41,14 @@ export default class Start extends React.Component {
               block
               onClick={e => history.push("/webb/activate")}
             >
-              Activate Digital ID
+              Activate Digital Id
           </Button>
             <Button
               color="danger" outline
               block
               onClick={e => this.context.removeData(() => history.push("/webb"))}
             >
-              Remove Digital ID
+              Remove Digital Id
           </Button>
           </div>
         </Container>

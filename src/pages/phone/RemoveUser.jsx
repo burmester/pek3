@@ -21,11 +21,11 @@ export default class RemoveUser extends React.Component {
   render() {
     return (
       <Fragment>
-        <Header showMenu={false} onCancel={() => history.goBack()} />
+        <Header showMenu={false} onCancel={() => history.goBack()} heading="Remove profile"/>
         <div className="container">
           <div className="centerdComponent text-center">
-            <h2>Remove your profile</h2>
-            <p>Your profile will be remove and you will have to activate again on Online Banking with card reader with cable.</p>
+            <h2>Remove profile</h2>
+            <p>Your profile will be removed and you will have to activate again on Individual Online Banking with card reader with cable.</p>
           </div>
           <Button color="danger" block onClick={this.onSubmit.bind(this)}>
             Remove
